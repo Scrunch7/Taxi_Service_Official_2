@@ -285,7 +285,7 @@ void user(string userName)
 	}
 }
 
-int main()
+void logIn()
 {
 	// initializing Varables 
 	bool runLogged = true;

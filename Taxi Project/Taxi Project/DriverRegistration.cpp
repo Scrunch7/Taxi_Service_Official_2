@@ -2,12 +2,12 @@
 
 //function Prototypes
 bool eligiblityCheck();
-newDriver filloutDriverRego();
+Driver filloutDriverRego();
 
 
 bool eligible;
 
-newDriver driverRegistration() {
+Driver driverRegistration() {
 	DrawLine(15);
 	cout << "Welcome New Driver\n";
 	DrawLine(15);
@@ -16,7 +16,7 @@ newDriver driverRegistration() {
 	if (eligible) {
 		return filloutDriverRego();
 	}
-	return;
+	return Driver();
 }
 
 bool eligiblityCheck() {
@@ -36,9 +36,9 @@ bool eligiblityCheck() {
 }
 
 
-newDriver filloutDriverRego() {
+Driver filloutDriverRego() {
 	int randomNumber;
-	newDriver test; //to test the ability to fill out form, replace with proper mechanics
+	Driver test; //to test the ability to fill out form, replace with proper mechanics
 	cout << "\nEnter your First and last name (e.g John Smith): "; cin >> test.fullName;
 	cout << "\nEnter your Gender (m, f, o "; cin >> test.gender;
 	cout << "\nEnter your Date of Birth (dd/mm/yyyy) "; cin >> test.DoB;

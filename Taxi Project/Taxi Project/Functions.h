@@ -15,7 +15,24 @@ using std::endl;
 using std::string;
 using std::time;
 
-struct newDriver {
+
+extern struct paymentMethod
+{
+	int cardNumber;
+	int expMonth;
+	int expYear;
+	int CVC;
+};
+
+extern struct Customer {
+	string fullName;
+	int contactNumber;
+	string email;
+	string streetAddress;
+	paymentMethod eftposCard;
+};
+
+extern struct Driver {
 	//new driver detail input, creates a new driver
 	string fullName;
 	char gender; //male, female, other
@@ -36,7 +53,10 @@ struct newDriver {
 	string endorsmentExpiry; //6 months from date of registration (date)`
 };
 
+
+
+
 void DrawLine(int stars);
 void landing();
 
-newDriver driverRegistration();
+Driver driverRegistration();

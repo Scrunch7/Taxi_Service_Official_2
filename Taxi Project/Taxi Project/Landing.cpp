@@ -1,5 +1,26 @@
 #include "Functions.h"
 
+int permissions;
+union User{
+	Driver d;
+	Customer c;
+};
+
+//When reading user:
+//	Read Permissions
+//switch (permissions) {
+//case 0:
+//	User.c* user = new Customer();
+//	user = readUser();
+//	break;
+//
+//case 1:
+//	User.d* user = new Driver();
+//	user = readDriver();
+//	break;
+//}
+
+
 
 void landing() { //user gives input, validates login and password OR allows user to register which writes relevent info to file for future validation
 	string userUsername, userPassword, operatorUsername, operatorPassword, adminUsername, adminPassword;
@@ -9,7 +30,9 @@ void landing() { //user gives input, validates login and password OR allows user
 	bool breakLoop = false;
 	int landingInput;
 
-	newDriver driver;
+ 
+
+	Driver driver;
 
 	DrawLine(11); cout << endl;
 	cout << "Main Menu *\n";
