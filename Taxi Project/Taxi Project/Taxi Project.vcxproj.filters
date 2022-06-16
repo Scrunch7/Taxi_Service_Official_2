@@ -24,9 +24,6 @@
     <ClCompile Include="Landing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AdminLoggedIn.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CustomerRegistration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -16,7 +16,9 @@ newDriver driverRegistration() {
 	if (eligible) {
 		return filloutDriverRego();
 	}
-	return;
+	else {
+		cout << "failed";
+	}
 }
 
 bool eligiblityCheck() {

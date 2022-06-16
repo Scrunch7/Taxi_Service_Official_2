@@ -8,69 +8,7 @@
 #include <stdio.h>
 using namespace std;
 
-//test
 
-//the Menu template I made.
-/*void mainMenuTemplate()
-{
-	bool run = true;
-	int menuOption;
-	//DrawLine()
-	cout << "1 for Admin login|2 for Operator login|3 for User login|4 to quit\n";
-	//DrawLine()
-
-
-	while (run == true)
-	{
-		int menuOption = 0;
-		try
-		{
-			cin >> menuOption;
-			if (menuOption < 1 || menuOption > 4)
-			{
-				throw(menuOption);
-			}
-			else {
-				break;
-			}
-		}
-		catch (int menuOption)
-		{
-			cout << "\nInvaild input!\nYou must a valid number corosponding to the avalable options\n";
-		}
-	}
-
-	switch (menuOption)
-	{
-	case 1:
-		//Admin login fuction
-		cout << "\nlogin fuction 0\n";
-		break;
-	case 2:
-		//Operator login fuction
-		cout << "\nlogin fuction 1\n";
-		break;
-	case 3:
-		//User login fuction
-		cout << "\nlogin fuction 2\n";
-		break;
-	case 4:
-		run = false;
-		break;
-
-
-
-
-
-		//For observation perpouses, remove  once code is ready
-		while (true)
-		{
-			cout << "\nwait\n";
-			int wait;
-			cin >> wait;
-		}
-	}
-}*/
 
 //accounts
 void admin()
@@ -285,7 +223,7 @@ void user(string userName)
 	}
 }
 
-int main()
+void login()
 {
 	// initializing Varables 
 	bool runLogged = true;

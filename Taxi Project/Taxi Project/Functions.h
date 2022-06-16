@@ -4,8 +4,9 @@
 #include <ctime>
 #include <CMATH>
 #include <time.h> 
-#include<windows.h>
+#include <windows.h>
 #include <stdio.h>
+#include <fstream>
 
 using std::srand;
 
@@ -14,6 +15,8 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::time;
+using std::fstream;
+using std::ios;
 
 struct newDriver {
 	//new driver detail input, creates a new driver
@@ -38,5 +41,6 @@ struct newDriver {
 
 void DrawLine(int stars);
 void landing();
+void writeCSV(string fileName);
 
 newDriver driverRegistration();
