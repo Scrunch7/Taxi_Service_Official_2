@@ -3,6 +3,9 @@
 
 
 int landingInput;
+struct Driver;
+struct Customer;
+struct paymentMethod;
 
 
 int main()
