@@ -4,8 +4,9 @@
 #include <ctime>
 #include <CMATH>
 #include <time.h> 
-#include<windows.h>
+#include <windows.h>
 #include <stdio.h>
+#include <fstream>
 
 using std::srand;
 
@@ -14,6 +15,8 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::time;
+using std::fstream;
+using std::ios;
 
 
 extern struct paymentMethod
@@ -58,5 +61,6 @@ extern struct Driver {
 
 void DrawLine(int stars);
 void landing();
+void writeCSV(string fileName);
 
 Driver driverRegistration();

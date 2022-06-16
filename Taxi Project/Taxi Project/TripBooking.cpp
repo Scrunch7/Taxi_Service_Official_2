@@ -1,6 +1,6 @@
 #include "Functions.h"
 
-int tripBooking() //cannot use main
+void tripBooking() //cannot use main
 {
 	//initializing variables
 	bool run = true;
