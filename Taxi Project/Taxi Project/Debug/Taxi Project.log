@@ -1,0 +1,16 @@
+﻿  AdminLoggedIn.cpp
+  CustomerRegistration.cpp
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\CustomerRegistration.cpp(34,18): error C2039: 'card': is not a member of 'paymentMethod'
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\CustomerRegistration.cpp(3): message : see declaration of 'paymentMethod'
+  DriverRegistration.cpp
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\DriverRegistration.cpp(19,2): error C2561: 'driverRegistration': function must return a value
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\DriverRegistration.cpp(10): message : see declaration of 'driverRegistration'
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\DriverRegistration.cpp(56,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  UserDriverLoggedIn.cpp
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(137,17): warning C4101: 'menuOption': unreferenced local variable
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(155,14): warning C4101: 'menuOption': unreferenced local variable
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(165,7): warning C4101: 'availableState': unreferenced local variable
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(213,14): warning C4101: 'menuOption': unreferenced local variable
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(281,14): warning C4101: 'menuOption': unreferenced local variable
+C:\Users\270159918\source\repos\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(310,15): warning C4101: 'accountType': unreferenced local variable
+  Generating Code...
