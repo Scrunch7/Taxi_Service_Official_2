@@ -1,11 +1,27 @@
-﻿  UserDriverLoggedIn.cpp
+﻿  Landing.cpp
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(25,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(33,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(54,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(58,2): warning C4091: 'extern ': ignored on left of 'Admin' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Landing.cpp(9,1): warning C4624: 'User': destructor was implicitly defined as deleted
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Landing.cpp(9): error C2280: 'User::User(void)': attempting to reference a deleted function
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Landing.cpp(9): message : compiler has generated 'User::User' here
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Landing.cpp(9,1): message : 'User::User(void)': function was implicitly deleted because 'User' has a variant data member 'User::a' with a non-trivial default constructor
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Landing.cpp(5): message : see declaration of 'User::a'
+  Taxi_Service_Offiicial_2.cpp
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(25,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(33,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(54,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(58,2): warning C4091: 'extern ': ignored on left of 'Admin' when no variable is declared
+  UserDriverLoggedIn.cpp
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(25,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(33,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(54,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\Functions.h(58,2): warning C4091: 'extern ': ignored on left of 'Admin' when no variable is declared
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(137,17): warning C4101: 'menuOption': unreferenced local variable
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(155,14): warning C4101: 'menuOption': unreferenced local variable
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(165,7): warning C4101: 'availableState': unreferenced local variable
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(213,14): warning C4101: 'menuOption': unreferenced local variable
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(281,14): warning C4101: 'menuOption': unreferenced local variable
 C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\Taxi Project\UserDriverLoggedIn.cpp(310,15): warning C4101: 'accountType': unreferenced local variable
-  Taxi Project.vcxproj -> C:\Users\270161698\OneDrive - UP Education\Documents\GitHub\Taxi_Service_Official_2\Taxi Project\x64\Debug\Taxi Project.exe
+  Generating Code...
