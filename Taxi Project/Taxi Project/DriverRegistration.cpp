@@ -5,6 +5,22 @@ bool eligiblityCheck();
 Driver filloutDriverRego();
 
 
+enum class Permission {Customer, Driver, Admin};
+
+void tempEnumUse() {
+	string user;
+	string pass;
+	int permsVal;
+	Permission perms;
+
+	cin >> user >> pass >> permsVal;
+
+
+	//fileOut >> user >> pass >> perms = (Permission)permsVal
+
+}
+
+
 bool eligible;
 
 Driver driverRegistration() {
@@ -61,3 +77,8 @@ Driver filloutDriverRego() {
 	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
 	return test;
 } //will need way of chossing inputs for mutliple drivers
+
+void writeDriverRegistration(string driver) {
+	int field[12];
+}
+

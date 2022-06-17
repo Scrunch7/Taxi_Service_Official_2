@@ -53,8 +53,24 @@ extern struct Driver {
 	string endorsmentExpiry; //6 months from date of registration (date)`
 };
 
+extern struct Admin {
+	string name = "admin";
+};
 
+Customer Login(Customer user) {
 
+	return user;
+}
+Driver Login(Driver user) {
+
+	return user;
+}
+Admin Login(Admin user) {
+
+	return user;
+}
+
+char accountType;
 
 void DrawLine(int stars);
 void landing();

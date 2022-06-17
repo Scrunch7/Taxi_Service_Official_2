@@ -294,7 +294,7 @@ void logIn()
 	string userName;
 	string driverID;
 	//accountID should get the account type from the main menu as a Char. 'a' = Admin, 'd' = Driver(operator), 'u' = User. !must be replaced!
-	char accountType = 'x';
+	
 	cout << "\nInput test type: ";
 	cin >> accountType;
 	while (runLogged == true)
