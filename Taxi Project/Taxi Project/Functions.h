@@ -1,19 +1,28 @@
 #pragma once
 #include <iostream>
 #include <string.h>
-#include <ctime>
+#include <time.h> 
 #include <CMATH>
 #include <time.h> 
 #include<windows.h>
 #include <stdio.h>
+#include <vector>
+#include <sstream>
+#include<fstream>
 
 using std::srand;
 
-using std::cout;
 using std::cin;
-using std::endl;
+using std::cout;
 using std::string;
-using std::time;
+using std::ios;
+using std::fstream;
+using std::endl;
+using std::getline;
+using std::ifstream;
+using std::ofstream;
+using std::vector;
+using std::stringstream;
 
 
 extern struct paymentMethod
@@ -74,5 +83,16 @@ char accountType;
 
 void DrawLine(int stars);
 void landing();
-
+string CSVOpenClose();
+string TXTOpenClose();
 Driver driverRegistration();
+
+//read and writing file fuctions
+void directWriteTXT(string fileName);
+void readTXT(string fileName);
+void directWriteCSV(string fileName);
+void readCSV(string fileName);
+//Accounts
+void admin();
+void driver(string driverID);
+void user(string userName);

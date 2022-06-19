@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdminAccount.cpp" />
     <ClCompile Include="AdminLoggedIn.cpp" />
     <ClCompile Include="CustomerRegistration.cpp" />
     <ClCompile Include="DriverRegistration.cpp" />
