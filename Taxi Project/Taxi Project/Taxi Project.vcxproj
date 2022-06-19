@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdirectWriteTXT.cpp" />
     <ClCompile Include="AdminAccount.cpp" />
     <ClCompile Include="AdminLoggedIn.cpp" />
     <ClCompile Include="CustomerRegistration.cpp" />
+    <ClCompile Include="DriverAccount.cpp" />
     <ClCompile Include="DriverRegistration.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Landing.cpp" />
