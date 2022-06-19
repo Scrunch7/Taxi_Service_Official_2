@@ -96,3 +96,9 @@ void readCSV(string fileName);
 void admin();
 void driver(string driverID);
 void user(string userName);
+
+//customer Registration
+
+void customerRegistration(string customerFile);
+void openClose(string customerFile);
+void custReg(string customerFile);
