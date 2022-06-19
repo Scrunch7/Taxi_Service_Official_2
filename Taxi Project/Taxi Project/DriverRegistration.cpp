@@ -2,7 +2,7 @@
 
 //function Prototypes
 bool eligiblityCheck();
-Driver filloutDriverRego();
+void filloutDriverRego();
 
 
 enum class Permission {Customer, Driver, Admin};
@@ -23,16 +23,16 @@ void tempEnumUse() {
 
 bool eligible;
 
-Driver driverRegistration() {
+void driverRegistration() {
 	DrawLine(15);
 	cout << "Welcome New Driver\n";
 	DrawLine(15);
 	cout << "Please fill out the following check:\n";
 	eligiblityCheck();
 	if (eligible) {
-		return filloutDriverRego();
+	filloutDriverRego();
 	}
-	return Driver();
+	
 }
 
 bool eligiblityCheck() {
@@ -52,7 +52,7 @@ bool eligiblityCheck() {
 }
 
 
-Driver filloutDriverRego() {
+void filloutDriverRego() {
 	int randomNumber;
 	Driver test; //to test the ability to fill out form, replace with proper mechanics
 	cout << "\nEnter your First and last name (e.g John Smith): "; cin >> test.fullName;
@@ -75,7 +75,7 @@ Driver filloutDriverRego() {
 	}
 
 	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
-	return test;
+	
 } //will need way of chossing inputs for mutliple drivers
 
 void writeDriverRegistration(string driver) {
