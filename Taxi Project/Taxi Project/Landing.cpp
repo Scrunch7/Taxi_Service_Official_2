@@ -19,6 +19,21 @@ bool adminUsernameValid = false, adminPasswordValid = false;
 bool breakLoop = false;
 int landingInput;
 
+//When reading user:
+//	Read Permissions
+//switch (permissions) {
+//case 0:
+//	User.c* user = new Customer();
+//	user = readUser();
+//	break;
+//
+//case 1:
+//	User.d* user = new Driver();
+//	user = readDriver();
+//	break;
+//}
+
+
 void landing() { //user gives input, validates login and password OR allows user to register which writes relevent info to file for future validatioN
 
 
@@ -39,7 +54,9 @@ void landing() { //user gives input, validates login and password OR allows user
 			break;
 
 		case 2: //customer Sign Up
-			cout << "Placeholder2\n";
+			cout << "help\n";
+			custReg(customerFile + ".csv"); //where to find
+			return;
 			break;
 
 		case 3: //driver login
