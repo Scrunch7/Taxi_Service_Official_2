@@ -139,14 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdminAccount.cpp" />
     <ClCompile Include="AdminLoggedIn.cpp" />
+    <ClCompile Include="Booking_page.cpp" />
     <ClCompile Include="CustomerRegistration.cpp" />
+    <ClCompile Include="DirectWriteTXT.cpp" />
+    <ClCompile Include="DriverAccount.cpp" />
     <ClCompile Include="DriverRegistration.cpp" />
     <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="IB_EB_TH_logged_in_pages.cpp" />
     <ClCompile Include="Landing.cpp" />
+    <ClCompile Include="ReadCSV.cpp" />
+    <ClCompile Include="ReadTXT.cpp" />
     <ClCompile Include="Taxi_Service_Offiicial_2.cpp" />
-    <ClCompile Include="TripBooking.cpp" />
-    <ClCompile Include="UserDriverLoggedIn.cpp" />
+    <ClCompile Include="UserAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h" />
