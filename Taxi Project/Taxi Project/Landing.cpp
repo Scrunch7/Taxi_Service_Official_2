@@ -97,7 +97,7 @@ void landing() { //user gives input, validates login and password OR allows user
 
 		case 4: //driver registration
 			cout << "Placeholder4\n";
-			driver = driverRegistration();
+			driverRegistration("driverFile.csv");
 			break;
 
 		case 5: //admin login
