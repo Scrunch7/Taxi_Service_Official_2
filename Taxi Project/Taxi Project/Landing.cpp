@@ -72,7 +72,7 @@ void landing() { //user gives input, validates login and password OR allows user
 			break;
 
 		case 2: //customer Sign Up
-			custReg(customerFile + ".csv");
+			custReg( "customerFile.csv");
 			return;
 			break;
 		
