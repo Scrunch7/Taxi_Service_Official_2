@@ -70,3 +70,6 @@ void driverRegistration();
 void customerRegistration(string customerFile);
 void openClose(string customerFile);
 void custReg(string customerFile);
+
+void driverRegistration(string driverFile);
+void filloutDriverRego(string driverFile);

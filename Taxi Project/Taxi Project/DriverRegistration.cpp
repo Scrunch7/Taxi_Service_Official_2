@@ -6,14 +6,14 @@ bool eligiblityCheck();
 
 bool eligible;
 
-void driverRegistration() {
+void driverRegistration(string driverFile) {
 	DrawLine(15);
 	cout << "Welcome New Driver\n";
 	DrawLine(15);
 	cout << "Please fill out the following check:\n";
 	eligiblityCheck();
 	if (eligible) {
-		return filloutDriverRego();
+		return filloutDriverRego(driverFile);
 	}
 }
 
@@ -34,11 +34,11 @@ bool eligiblityCheck() {
 }
 
 
-void filloutDriverRego() {
+void filloutDriverRego(string driverFile) {
 
 	fstream myFile;
 
-	myFile.open("customerFile.csv", ios::app);
+	myFile.open("driverFile.csv", ios::app);
 
 	cout << "\nFile created and opened successfully\n\n";
 
