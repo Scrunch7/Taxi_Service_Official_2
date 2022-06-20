@@ -37,7 +37,8 @@ extern struct Customer {
 
 extern struct Driver {
 	//new driver detail input, creates a new driver
-	string fullName;
+	string firstName;
+	string lastName;
 	char gender; //male, female, other
 	string DoB; //date of birth
 	string nationality;
@@ -50,6 +51,7 @@ extern struct Driver {
 	int bankAccountNumber;
 	string bankName;
 	int vehicleRegoNum;
+	string vehicleMake;
 	string vehicleModel;
 	string wofExpiryDate;
 	int endorsmentNumber; //srand

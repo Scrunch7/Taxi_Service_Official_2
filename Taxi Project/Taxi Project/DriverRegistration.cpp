@@ -44,7 +44,8 @@ void filloutDriverRego() {
 
 
 	Driver test; //to test the ability to fill out form, replace with proper mechanics
-	cout << "\nEnter your First and last name (e.g John Smith): "; cin >> test.fullName;
+	cout << "\nEnter your First Name: "; cin >> test.firstName;
+	cout << "\n Enter your Last Name: "; cin >> test.lastName;
 	cout << "\nEnter your Gender (m, f, o "; cin >> test.gender;
 	cout << "\nEnter your Date of Birth (dd/mm/yyyy) "; cin >> test.DoB;
 	cout << "\nEnter your Nationality: "; cin >> test.nationality;
@@ -56,6 +57,8 @@ void filloutDriverRego() {
 	cout << "\nEnter your Bank Account number (16 digits): "; cin >> test.bankAccountNumber;
 	cout << "\nEnter your Bank's Name: "; cin >> test.bankName;
 	cout << "\nEnter your Vehicle Registration Number "; cin >> test.vehicleRegoNum;
+	cout << "\nEnter your Vehicle's Make: "; cin >> test.vehicleMake;
+	cout << "\nEnter you Vehicle's Model: "; cin >> test.vehicleModel;
 	cout << "\nEnter your WoF Expiry Date "; cin >> test.wofExpiryDate;
 
 	srand((time(NULL)));
@@ -65,4 +68,24 @@ void filloutDriverRego() {
 
 	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
 
+	myFile << test.firstName << ","
+		<< test.lastName << ","
+		<< test.gender << ","
+		<< test.DoB << ","
+		<< test.nationality << ","
+		<< test.licenceNumber << ","
+		<< test.expiryDate << ","
+		<< test.yearsDriving << ","
+		<< test.contactNumber << ","
+		<< test.email << ","
+		<< test.bankAccountNumber << ","
+		<< test.bankName << ","
+		<< test.vehicleRegoNum << ","
+		<< test.vehicleMake << ","
+		<< test.vehicleModel << ","
+		<< test.wofExpiryDate << ","
+		<< test.endorsmentNumber << ","
+		<< test.endorsmentExpiry << "," << endl;
+
+	myFile.close();
 } //will need way of chossing inputs for mutliple drivers
