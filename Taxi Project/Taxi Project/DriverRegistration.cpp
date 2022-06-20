@@ -2,12 +2,11 @@
 
 //function Prototypes
 bool eligiblityCheck();
-Driver filloutDriverRego();
 
 
 bool eligible;
 
-Driver driverRegistration() {
+void driverRegistration() {
 	DrawLine(15);
 	cout << "Welcome New Driver\n";
 	DrawLine(15);
@@ -16,7 +15,6 @@ Driver driverRegistration() {
 	if (eligible) {
 		return filloutDriverRego();
 	}
-	return Driver();
 }
 
 bool eligiblityCheck() {
@@ -36,8 +34,15 @@ bool eligiblityCheck() {
 }
 
 
-Driver filloutDriverRego() {
-	int randomNumber;
+void filloutDriverRego() {
+
+	fstream myFile;
+
+	myFile.open("customerFile.csv", ios::app);
+
+	cout << "\nFile created and opened successfully\n\n";
+
+
 	Driver test; //to test the ability to fill out form, replace with proper mechanics
 	cout << "\nEnter your First and last name (e.g John Smith): "; cin >> test.fullName;
 	cout << "\nEnter your Gender (m, f, o "; cin >> test.gender;
@@ -59,5 +64,5 @@ Driver filloutDriverRego() {
 	}
 
 	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
-	return test;
+
 } //will need way of chossing inputs for mutliple drivers

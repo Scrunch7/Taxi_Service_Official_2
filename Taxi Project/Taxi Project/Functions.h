@@ -63,7 +63,7 @@ void DrawLine(int stars);
 void landing();
 void writeCSV(string fileName);
 
-Driver driverRegistration();
+void driverRegistration();
 
 void customerRegistration(string customerFile);
 void openClose(string customerFile);
