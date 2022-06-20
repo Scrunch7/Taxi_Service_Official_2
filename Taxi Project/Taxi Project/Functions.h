@@ -64,3 +64,7 @@ void landing();
 void writeCSV(string fileName);
 
 Driver driverRegistration();
+
+void customerRegistration(string customerFile);
+void openClose(string customerFile);
+void custReg(string customerFile);

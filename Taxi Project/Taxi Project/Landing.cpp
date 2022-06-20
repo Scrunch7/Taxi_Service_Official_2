@@ -72,8 +72,10 @@ void landing() { //user gives input, validates login and password OR allows user
 			break;
 
 		case 2: //customer Sign Up
-			cout << "Placeholder2\n";
+			custReg(customerFile + ".csv");
+			return;
 			break;
+		
 
 		case 3: //driver login
 			while (true)
