@@ -1,13 +1,6 @@
 // Israel_Ethan_Taehg_Taxi_Booking.cpp : This file contains the 'main' function. Program execution begins and ends there.
 #include "Functions.h"
 
-
-int landingInput;
-struct Driver;
-struct Customer;
-struct paymentMethod;
-
-
 int main()
 {
 	DrawLine(25);
