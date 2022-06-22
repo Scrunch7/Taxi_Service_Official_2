@@ -31,7 +31,7 @@ void landing() { //user gives input, validates login and password OR allows user
 		switch (landingInput)
 		{
 		case 1: //customer Login
-			customerLogin();
+			login('u');
 			break;
 
 		case 2: //customer Sign Up
@@ -41,7 +41,7 @@ void landing() { //user gives input, validates login and password OR allows user
 
 
 		case 3: //driver login
-			driverLogin();
+			login('d');
 			break;
 
 		case 4: //driver registration
@@ -50,7 +50,7 @@ void landing() { //user gives input, validates login and password OR allows user
 			break;
 
 		case 5: //admin login
-			adminLogin();
+			login('a');
 			break;
 
 		case 6: //exit
@@ -63,72 +63,3 @@ void landing() { //user gives input, validates login and password OR allows user
 	}
 }
 
-void customerLogin() {
-	cout << "Please Enter your username\n"; cin >> userUsername; //add tolower()
-	cout << "Please Enter your password\n"; cin >> userPassword;
-
-	while (true) { //turn into function later
-		// read customer username
-		if (userUsername == "tester") { //tester is a placeholder until file reading is completed
-			userUsernameValid = true;
-			break;
-
-			if (userPassword == "password") { //password is a placeholder until file reading is complete
-				userPasswordValid = true;
-				break;
-				//takes user to relevent page
-			}
-			else {
-				cout << "invalid password, try again\n";
-			}
-		}
-		else {
-			cout << "Invalid username, please try again\n";
-
-		}
-
-	}
-}
-
-void driverLogin() {
-	while (true)
-	{
-		cout << "Please Enter your username\n"; cin >> operatorUsername;
-		cout << "Please Enter your password\n"; cin >> operatorPassword;
-		// read customer username
-		if (operatorUsername == "tester" && operatorPassword == "password") { //tester is a placeholder until file reading is completed
-			opUsernameValid = true;
-			opPasswordValid = true;
-			break;
-		}
-		else {
-			cout << "Invalid username pr password, please try again\n";
-		}
-	}
-	//LogInFunction here();
-}
-
-void adminLogin() {
-	cout << "Please Enter your username\n"; cin >> adminUsername;
-	cout << "Please Enter your password\n"; cin >> adminPassword;
-	while (true) { //turn into function later
-// read customer username
-		if (adminUsername == "admin" || "Admin") {
-			adminUsernameValid = true;
-
-
-			if (adminPassword == "password") { //password is a placeholder until file reading is complete
-				adminPasswordValid = true;
-
-				//takes user to relevent page
-			}
-			else {
-				cout << "invalid password, try again\n";
-			}
-		}
-		else {
-			cout << "Invalid username, please try again\n";
-
-		}
-	}
-}

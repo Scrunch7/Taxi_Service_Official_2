@@ -2,7 +2,7 @@
 #include "Functions.h"
 
 
-int landingInput;
+int unknownInput; //was landingInput but can't be called landingInput as the name is aready being using in Landing.cpp
 struct Driver;
 struct Customer;
 struct paymentMethod;
