@@ -11,23 +11,25 @@ void adminAccount()
 	bool runAccount2 = true;
 	int menuOption = 1;
 
-	//Read weeky_report !must be replaced!
-	//Get current date !must be replaced!
-	//Read weeky_report day[current date] !must be replaced!
 
 	while (runAccount == true) {
 		//Read complaint_problems userProbCount !must be replaced!
-		cout << "\n1 View and edit Customer Accounts|2 View and edit Driver Accounts|3 View Compliants and Problems|4 User Feedback|5 Weekly Report|6 Daily Report|7 Cancellation & Registration report|8 System|9 Back to menu\n:";
+		cout << "\n1 View and edit Customer Accounts|2 View and edit Driver Accounts|3 View Compliants and Problems|4 User Feedback|5 Weekly Report|6 Cancellation & Registration report|7 System|8 Back to menu\n:";
 		cin >> menuOption;
 		try {
 			switch (menuOption)
 			{
 			case 1:
-				//Function for reading and editing customer_account !must be replaced! (t.b.w.n)
-
+				//Function for reading
+				readCSV("customerFile");
+				//Function for editing
+				//Function add for editing here !must be replaced!
 				break;
 			case 2:
-				//Function for reading and editing driver_account !must be replaced! (t.b.w.n)
+				//Function for reading
+				readCSV("driverFile");
+				//Function for editing
+				//Function add for editing here !must be replaced!
 				break;
 			case 3:
 				readTXT("complaint_problems");
@@ -36,13 +38,9 @@ void adminAccount()
 				readTXT("user_feedback");
 				break;
 			case 5:
-				//Read weeky_report !must be replaced! (t.b.w.n)
+				readTXT("weekly_report");
 				break;
 			case 6:
-				//Get current date !must be replaced! (t.b.w.n)
-				//Read weeky_report day[current date] !must be replaced! (t.b.w.n)
-				break;
-			case 7:
 				runAccount2 = true;
 				while (runAccount2 == true)
 				{
@@ -73,10 +71,10 @@ void adminAccount()
 				}
 
 				break;
-			case 8:
+			case 7:
 				//(I don’t think we have to do anything for this but we still need to have the placeholder)
 				break;
-			case 9:
+			case 8:
 				runAccount = false;
 				break;
 			default:
