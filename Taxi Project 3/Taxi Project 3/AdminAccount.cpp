@@ -1,5 +1,9 @@
 #include "Functions.h"
 
+void weeklyReport() {
+
+}
+
 void adminAccount()
 {
 	// initializing Varables 
