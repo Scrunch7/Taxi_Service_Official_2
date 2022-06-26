@@ -26,7 +26,7 @@ using std::stringstream;
 using std::setprecision;
 using std::srand;
 using std::time;
-
+using std::size;
 
 //structs
 extern struct paymentMethod
@@ -66,6 +66,7 @@ extern struct Driver {
 	string wofExpiryDate;
 	int endorsmentNumber; //srand
 	string endorsmentExpiry; //6 months from date of registration (date)`
+
 };
 
 //Functions
