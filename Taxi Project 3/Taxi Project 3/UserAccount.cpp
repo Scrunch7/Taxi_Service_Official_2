@@ -57,7 +57,6 @@ void userAccount(string userName)
 					Sleep(3000);
 					dWriteTXT("lost_&_found");
 				}
-
 				break;
 			case 9:
 				runAccount = false;
