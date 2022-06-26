@@ -1,6 +1,12 @@
+<<<<<<< HEAD:Taxi Project/Taxi Project/DriverAccount.cpp
+#include "Fuctions.h"
+
+void driver(string driverID)
+=======
 #include "Functions.h"
 
 void driverAccount(string driverID)
+>>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverAccount.cpp
 {
 	// initializing Varables 
 	bool runAccount = true;
@@ -17,13 +23,41 @@ void driverAccount(string driverID)
 
 	cout << "\nWhat information you would like to review " << driverName << "?\n";
 	while (runAccount == true) {
+<<<<<<< HEAD:Taxi Project/Taxi Project/DriverAccount.cpp
+		cout << "\n1 Trip Number|2 Customer Name|3 Contact number|4 Starting place|5 Destination|6 Date and Time|7 Toggle Available state|9 Back to menu\n:";
+=======
 		cout << "\n1 Write Daly Report|2 Trip Number|3 Customer Name|4 Contact number|5 Starting place|6 Destination|7 Date and Time|8 Toggle Available state|9 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
+>>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverAccount.cpp
 		cin >> menuOption;
 		try
 		{
 			switch (menuOption)
 			{
 			case 1:
+<<<<<<< HEAD:Taxi Project/Taxi Project/DriverAccount.cpp
+				//Read trip_booking tripNumber !must be replaced! (t.b.w.n)
+				break;
+			case 2:
+				//Read trip_booking tripUserName !must be replaced! (t.b.w.n)
+				break;
+			case 3:
+				//Read trip_booking tripContactNumb !must be replaced! (t.b.w.n)
+				break;
+			case 4:
+				//Read trip_booking tripStart !must be replaced! (t.b.w.n)
+				break;
+			case 5:
+				//Read trip_booking tripEnd !must be replaced! (t.b.w.n)
+				break;
+			case 6:
+				//Read trip_booking tripTime[0] tripTime[1] tripTime[2] tripTime[4] !must be replaced! (t.b.w.n)
+				//		          (month)      (day)         (hour)     (minute)
+				break;
+			case 7:
+				//Toggle availableState !must be replaced! needs strut for boolen
+				break;
+			case 8:
+=======
 				cout <<"\nRemember: \n1.To include the date as you were trained to.\n2.that the enter button submits the report in it's current state.\n3.To include your Driver ID as you were trained to.\n";
 				dWriteTXT("weekly_report");
 				break;
@@ -50,6 +84,7 @@ void driverAccount(string driverID)
 				//Toggle availableState in driver account !must be replaced!
 				break;
 			case 9:
+>>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverAccount.cpp
 				runAccount = false;
 				break;
 			default:
