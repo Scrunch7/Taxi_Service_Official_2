@@ -58,13 +58,13 @@ extern struct Driver {
 	string nationality;
 	string licenceNumber;
 	string expiryDate; //dd/mm/yyyy
-	float yearsDriving; //driving experience
-	int contactNumber;
+	string yearsDriving; //driving experience
+	string contactNumber;
 	string email;
 	string address; //num, street, suburb, city/region
-	int bankAccountNumber;
+	string bankAccountNumber;
 	string bankName;
-	int vehicleRegoNum;
+	string vehicleRegoNum;
 	string vehicleMake;
 	string vehicleModel;
 	string wofExpiryDate;

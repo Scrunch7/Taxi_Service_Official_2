@@ -86,12 +86,11 @@ void filloutDriverRego(string driverFile) {
 			cout << "\n Passwords match!\n";
 			test.driverPassword = enterPw;
 			pwMatch = true;
+			continue;
 		}
 		cout << "\nPasswords Do Not Match\nPlease re-enter passwword\n";
 	}
 	
-
-
 	myFile << test.firstName << ","
 		<< test.lastName << ","
 		<< test.gender << ","
@@ -114,4 +113,9 @@ void filloutDriverRego(string driverFile) {
 		<< test.driverPassword << endl;
 
 	myFile.close();
+
+	if (myFile.is_open()) {
+		cout << "\nFile failed to close\n";
+	}
+	cout << "\nFile closed successfully\n\n";
 } //will need way of chossing inputs for mutliple drive
