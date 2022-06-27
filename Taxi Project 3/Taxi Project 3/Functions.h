@@ -47,10 +47,14 @@ extern struct Customer {
 
 extern struct Driver {
 	//new driver detail input, creates a new driver
+
 	string firstName;
 	string lastName;
 	char gender; //male, female, other
-	string DoB; //date of birth
+	string DoB;
+	string DoB_Day;
+	string DoB_Month;//date of birth
+	string DoB_Year;
 	string nationality;
 	string licenceNumber;
 	string expiryDate; //dd/mm/yyyy
@@ -66,7 +70,8 @@ extern struct Driver {
 	string wofExpiryDate;
 	int endorsmentNumber; //srand
 	string endorsmentExpiry; //6 months from date of registration (date)`
-
+	string driverUsername;
+	string driverPassword;
 };
 
 //Functions
