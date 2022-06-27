@@ -85,7 +85,7 @@ void filloutDriverRego(string driverFile) {
 			pwMatch = false;
 			break;
 		}
-		cout << "\nPasswords Do Not Match\nPlease re-enter passwword\n";
+		cout << "\nPasswords Do Not Match\nPlease re-enter password\n";
 	}
 	
 	myFile << test.firstName << ","
