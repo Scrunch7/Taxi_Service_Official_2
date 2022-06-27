@@ -6,6 +6,7 @@ void driverAccount(string driverID)
 	bool runAccount = true;
 	int menuOption = 1;
 	bool availableState;
+	int target;
 
 	//should get the driver's name from the driver file or struct using the driverID !must be replaced!
 	string driverName = "bob";
@@ -17,7 +18,7 @@ void driverAccount(string driverID)
 
 	cout << "\nWhat information you would like to review " << driverName << "?\n";
 	while (runAccount == true) {
-		cout << "\n1 Write Daly Report|2 Read All Trips|3 read spesific trip|4 Driver payment details|5 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
+		cout << "\n1 Write Daly Report|2 Read All Trips|3 read spesific trip|4 take a taxi Job|5 Driver payment details|6 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
 		cin >> menuOption;
 		try
 		{
@@ -30,15 +31,37 @@ void driverAccount(string driverID)
 
 				break;
 			case 2:
-				//Read all trips !must be replaced!
+				readCSV("bookings.csv");
 				break;
 			case 3:
-				//read spesific trip !must be replaced! 
+				cout << "\nWhich trip would you like to look at?\n:";
+				while (true) 
+				{
+					try 
+					{
+						cin >> target;
+						if (target > 1) {
+							break;
+						}
+						else 
+						{
+							throw(target);
+						}
+					}
+					catch (int target) 
+					{
+						cout << "\nPlease input a valid number\n:";
+					}
+				}
+				targetedReadCSV("bookings.csv", target);
 				break;
 			case 4:
 				//Driver payment details !must be replaced!
 				break;
 			case 5:
+				//Driver payment details !must be replaced!
+				break;
+			case 6:
 				runAccount = false;
 				break;
 			default:
