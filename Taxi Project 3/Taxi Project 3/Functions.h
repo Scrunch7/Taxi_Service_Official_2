@@ -84,6 +84,7 @@ void readTXT(string fileName);
 void directWriteCSV(string fileName);
 void readCSV(string fileName);
 void writeCSV(string fileName);
+void targetedReadCSV(string fileName, int target);
 //Accounts
 void adminAccount();
 void driverAccount(string driverID);
