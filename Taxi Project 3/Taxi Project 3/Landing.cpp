@@ -42,7 +42,6 @@ void landing() { //user gives input, validates login and password OR allows user
 			break;
 
 		case 4: //driver registration
-			cout << "Placeholder4\n";
 			driverRegistration("driverFile.csv");
 			break;
 

@@ -47,26 +47,31 @@ extern struct Customer {
 
 extern struct Driver {
 	//new driver detail input, creates a new driver
+
 	string firstName;
 	string lastName;
 	char gender; //male, female, other
-	string DoB; //date of birth
+	string DoB;
+	string DoB_Day;
+	string DoB_Month;//date of birth
+	string DoB_Year;
 	string nationality;
 	string licenceNumber;
 	string expiryDate; //dd/mm/yyyy
-	float yearsDriving; //driving experience
-	int contactNumber;
+	string yearsDriving; //driving experience
+	string contactNumber;
 	string email;
 	string address; //num, street, suburb, city/region
-	int bankAccountNumber;
+	string bankAccountNumber;
 	string bankName;
-	int vehicleRegoNum;
+	string vehicleRegoNum;
 	string vehicleMake;
 	string vehicleModel;
 	string wofExpiryDate;
 	int endorsmentNumber; //srand
 	string endorsmentExpiry; //6 months from date of registration (date)`
-
+	string driverUsername;
+	string driverPassword;
 };
 
 //Functions

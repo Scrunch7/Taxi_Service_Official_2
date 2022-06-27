@@ -7,14 +7,18 @@ bool eligiblityCheck();
 bool eligible;
 
 void driverRegistration(string driverFile) {
+	cout << endl;
 	DrawLine(15);
-	cout << "Welcome New Driver\n";
+	cout << "\nWelcome New Driver\n";
 	DrawLine(15);
-	cout << "Please fill out the following check:\n";
-	eligiblityCheck();
-	if (eligible) {
-		return filloutDriverRego(driverFile);
-	}
+	cout << "\nPlease fill out the following check:\n";
+	filloutDriverRego("driverFile.csv");
+	//eligiblityCheck();
+	//if (eligible) {
+	//	return filloutDriverRego(driverFile);
+	//	filloutDriverRego("driverFile.csv");
+	//}
+	landing();
 }
 
 bool eligiblityCheck() {
@@ -22,10 +26,10 @@ bool eligiblityCheck() {
 	float yearsDriven;
 	float carAge;
 	float driverAge;
-	cout << "What kind of licence do you have:\n, 1. Learners\n 2. Restricted\n 3.Full\n 4. None\nChoose:"; cin >> licenceType;
+	cout << "What kind of licence do you have:\n, 1. Learners\n 2. Restricted\n 3. Full\n 4. None\nChoose:"; cin >> licenceType;
 	cout << "\nHow many years have you driven: "; cin >> yearsDriven;
 	cout << "\nHow many years old is your car? "; cin >> carAge;
-	cout << "How many years old are you: "; cin >> driverAge;
+	cout << "\nHow many years old are you: "; cin >> driverAge;
 
 	if (licenceType == 4 && yearsDriven > 2 && carAge <= 10 && driverAge > 20) {
 		eligible = true;
@@ -35,19 +39,22 @@ bool eligiblityCheck() {
 
 
 void filloutDriverRego(string driverFile) {
-
+	string enterPw;
+	string repeatPw; //var for checking that user entered password correctly twice
+	bool pwMatch = false;
 	fstream myFile;
 
 	myFile.open("driverFile.csv", ios::app);
 
 	cout << "\nFile created and opened successfully\n\n";
-
-
+	
 	Driver test; //to test the ability to fill out form, replace with proper mechanics
 	cout << "\nEnter your First Name: "; cin >> test.firstName;
 	cout << "\n Enter your Last Name: "; cin >> test.lastName;
 	cout << "\nEnter your Gender (m, f, o "; cin >> test.gender;
-	cout << "\nEnter your Date of Birth (dd/mm/yyyy) "; cin >> test.DoB;
+	cout << "\nEnter your Date of Birth (dd mm yyyy, include spaces) "; cin >> test.DoB_Day; cin >> test.DoB_Month; cin >> test.DoB_Year;
+	test.DoB = test.DoB_Day + "/" + test.DoB_Month + "/" + test.DoB_Year;
+	cout << " ";
 	cout << "\nEnter your Nationality: "; cin >> test.nationality;
 	cout << "\nEnter your Licence Number "; cin >> test.licenceNumber;
 	cout << "\nEnter your licence Date of Expiry "; cin >> test.expiryDate;
@@ -66,8 +73,24 @@ void filloutDriverRego(string driverFile) {
 		test.endorsmentNumber = (rand() % 10) + 1;
 	}
 
-	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
+	test.endorsmentExpiry = "9/06/2024\n\n"; //find way to generate random
 
+	DrawLine(15);
+	test.driverUsername = test.lastName + test.firstName + test.DoB_Day; //creates username
+	cout << "\nYour username is your last+first name and your DoB day: " << test.driverUsername << endl;
+	while (!pwMatch) {
+		cout << "\nPlease Enter a password: "; cin >> enterPw;
+		cout << "\nPlease Re-enter password: "; cin >> repeatPw;
+
+		if(enterPw==repeatPw){
+			cout << "\n Passwords match!\n";
+			test.driverPassword = enterPw;
+			pwMatch = true;
+			continue;
+		}
+		cout << "\nPasswords Do Not Match\nPlease re-enter passwword\n";
+	}
+	
 	myFile << test.firstName << ","
 		<< test.lastName << ","
 		<< test.gender << ","
@@ -85,7 +108,14 @@ void filloutDriverRego(string driverFile) {
 		<< test.vehicleModel << ","
 		<< test.wofExpiryDate << ","
 		<< test.endorsmentNumber << ","
-		<< test.endorsmentExpiry << "," << endl;
+		<< test.endorsmentExpiry << "," 
+		<< test.driverUsername<< ","
+		<< test.driverPassword << endl;
 
 	myFile.close();
-} //will need way of chossing inputs for mutliple driv
+
+	if (myFile.is_open()) {
+		cout << "\nFile failed to close\n";
+	}
+	cout << "\nFile closed successfully\n\n";
+} //will need way of chossing inputs for mutliple drive
