@@ -69,7 +69,8 @@ extern struct Driver {
 	string vehicleModel;
 	string wofExpiryDate;
 	int endorsmentNumber; //srand
-	string endorsmentExpiry; //6 months from date of registration (date)`
+	string endorsmentExpiry; //6 months from date of registration (date)
+	string randomBS;
 	string driverUsername;
 	string driverPassword;
 };

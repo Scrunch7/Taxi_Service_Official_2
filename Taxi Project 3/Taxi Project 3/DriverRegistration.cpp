@@ -2,8 +2,6 @@
 
 //function Prototypes
 bool eligiblityCheck();
-
-
 bool eligible;
 
 void driverRegistration(string driverFile) {
@@ -31,7 +29,7 @@ bool eligiblityCheck() {
 	cout << "\nHow many years old is your car? "; cin >> carAge;
 	cout << "\nHow many years old are you: "; cin >> driverAge;
 
-	if (licenceType == 4 && yearsDriven > 2 && carAge <= 10 && driverAge > 20) {
+	if (licenceType == 3 && yearsDriven > 2 && carAge <= 10 && driverAge > 20) {
 		eligible = true;
 	}
 	return eligible;
@@ -54,7 +52,6 @@ void filloutDriverRego(string driverFile) {
 	cout << "\nEnter your Gender (m, f, o "; cin >> test.gender;
 	cout << "\nEnter your Date of Birth (dd mm yyyy, include spaces) "; cin >> test.DoB_Day; cin >> test.DoB_Month; cin >> test.DoB_Year;
 	test.DoB = test.DoB_Day + "/" + test.DoB_Month + "/" + test.DoB_Year;
-	cout << " ";
 	cout << "\nEnter your Nationality: "; cin >> test.nationality;
 	cout << "\nEnter your Licence Number "; cin >> test.licenceNumber;
 	cout << "\nEnter your licence Date of Expiry "; cin >> test.expiryDate;
@@ -70,11 +67,11 @@ void filloutDriverRego(string driverFile) {
 
 	srand((time(NULL)));
 	for (int i = 100000; i < 999999; i++) {
-		test.endorsmentNumber = (rand() % 10) + 1;
+		test.endorsmentNumber = (rand() % 999999) + 1;
 	}
 
-	test.endorsmentExpiry = "9/06/2024\n\n"; //find way to generate random
-
+	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
+	
 	DrawLine(15);
 	test.driverUsername = test.lastName + test.firstName + test.DoB_Day; //creates username
 	cout << "\nYour username is your last+first name and your DoB day: " << test.driverUsername << endl;
@@ -85,8 +82,8 @@ void filloutDriverRego(string driverFile) {
 		if(enterPw==repeatPw){
 			cout << "\n Passwords match!\n";
 			test.driverPassword = enterPw;
-			pwMatch = true;
-			continue;
+			pwMatch = false;
+			break;
 		}
 		cout << "\nPasswords Do Not Match\nPlease re-enter passwword\n";
 	}
