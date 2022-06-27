@@ -82,6 +82,7 @@ void bookTaxi(int month, int day, int hour, int minute, string name, string dest
     }
 
     fileBooking.close();
+    cout << "\nYour booking ID is: " << booking_id <<"\nPlease remember it.\n";
 }
 
 void Booking(string username)
@@ -105,7 +106,9 @@ void Booking(string username)
     const double tax = 1.15;
     const double serviceFee = 10;
     const double costKM = 5;
-    //
+    //User details
+    int passengerCount;
+    string specialNeed;
     //Destination struct
     struct {
         string name;
@@ -345,6 +348,14 @@ void Booking(string username)
     }
     //User's information actally gets booked and added to the booking file if they confirmed that the infromation they inputed was correct
     if (confirm == 'y') {
+        while(true){
+            try {
+
+            }
+            catch(char choice){
+
+            }
+        }
         bookTaxi(month, day, hour, minute, name, destinationName, destinationkm, destinationID, total);
         cout << "\n\nYour taxi has been booked for the " << month << " Month, on the " << day << " Day, at " << hour << ":" << minute << " for " << name << ",\n Thank you for choosing Black and White cab Co";
     }

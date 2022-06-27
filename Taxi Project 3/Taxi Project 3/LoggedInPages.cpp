@@ -165,20 +165,4 @@ void login(char accountType)
 			break;
 		}
 	}
-
-
-
-
-
-
-
-
-
-	//For observation perpouses, remove  once code is ready
-	while (true)
-	{
-		cout << "\nwait\n";
-		int wait;
-		cin >> wait;
-	}
 }
