@@ -2,49 +2,19 @@
 
 //function Prototypes
 bool eligiblityCheck();
-<<<<<<< HEAD:Taxi Project/Taxi Project/DriverRegistration.cpp
-void filloutDriverRego();
-
-
-enum class Permission {Customer, Driver, Admin};
-
-void tempEnumUse() {
-	string user;
-	string pass;
-	int permsVal;
-	Permission perms;
-
-	cin >> user >> pass >> permsVal;
-
-
-	//fileOut >> user >> pass >> perms = (Permission)permsVal
-
-}
-=======
->>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverRegistration.cpp
 
 
 bool eligible;
 
-<<<<<<< HEAD:Taxi Project/Taxi Project/DriverRegistration.cpp
-void driverRegistration() {
-=======
 void driverRegistration(string driverFile) {
->>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverRegistration.cpp
 	DrawLine(15);
 	cout << "Welcome New Driver\n";
 	DrawLine(15);
 	cout << "Please fill out the following check:\n";
 	eligiblityCheck();
 	if (eligible) {
-<<<<<<< HEAD:Taxi Project/Taxi Project/DriverRegistration.cpp
-	filloutDriverRego();
-	}
-	
-=======
 		return filloutDriverRego(driverFile);
 	}
->>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverRegistration.cpp
 }
 
 bool eligiblityCheck() {
@@ -64,10 +34,6 @@ bool eligiblityCheck() {
 }
 
 
-<<<<<<< HEAD:Taxi Project/Taxi Project/DriverRegistration.cpp
-void filloutDriverRego() {
-	int randomNumber;
-=======
 void filloutDriverRego(string driverFile) {
 
 	fstream myFile;
@@ -77,7 +43,6 @@ void filloutDriverRego(string driverFile) {
 	cout << "\nFile created and opened successfully\n\n";
 
 
->>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverRegistration.cpp
 	Driver test; //to test the ability to fill out form, replace with proper mechanics
 	cout << "\nEnter your First Name: "; cin >> test.firstName;
 	cout << "\n Enter your Last Name: "; cin >> test.lastName;
@@ -102,15 +67,6 @@ void filloutDriverRego(string driverFile) {
 	}
 
 	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
-<<<<<<< HEAD:Taxi Project/Taxi Project/DriverRegistration.cpp
-	
-} //will need way of chossing inputs for mutliple drivers
-
-void writeDriverRegistration(string driver) {
-	int field[12];
-}
-
-=======
 
 	myFile << test.firstName << ","
 		<< test.lastName << ","
@@ -133,4 +89,3 @@ void writeDriverRegistration(string driver) {
 
 	myFile.close();
 } //will need way of chossing inputs for mutliple driv
->>>>>>> prototype:Taxi Project 3/Taxi Project 3/DriverRegistration.cpp
