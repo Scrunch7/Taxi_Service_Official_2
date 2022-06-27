@@ -9,8 +9,6 @@ void login(char accountType)
 	string userName;
 	string driverID;
 	//accountType should get the account type from the landing as a Char. 'a' = Admin, 'd' = Driver(operator), 'u' = User.
-	cout << "\nInput test type: ";
-	cin >> accountType;
 	while (runLogged == true)
 	{
 		bool search = true;

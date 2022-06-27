@@ -105,6 +105,7 @@ void Booking(string username)
     const double tax = 1.15;
     const double serviceFee = 10;
     const double costKM = 5;
+    //
     //Destination struct
     struct {
         string name;

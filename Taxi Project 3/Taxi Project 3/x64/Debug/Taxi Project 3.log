@@ -1,5 +1,64 @@
-﻿  Landing.cpp
-C:\Users\Israel\Documents\Github\Taxi_Service_Official_2\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
-C:\Users\Israel\Documents\Github\Taxi_Service_Official_2\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
-C:\Users\Israel\Documents\Github\Taxi_Service_Official_2\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
-  Taxi Project 3.vcxproj -> C:\Users\Israel\Documents\Github\Taxi_Service_Official_2\Taxi_Service_Official_2\Taxi Project 3\x64\Debug\Taxi Project 3.exe
+﻿  AdminAccount.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\AdminAccount.cpp(67,17): warning C4101: 'menuOption': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\AdminAccount.cpp(85,14): warning C4101: 'menuOption': unreferenced local variable
+  Booking_page.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(240,25): warning C4101: 'choice': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(330,37): warning C4101: 'confirm': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(337,25): warning C4101: 'confirm': unreferenced local variable
+  CustomerRegistration.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  DWriteTXT.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  DriverAccount.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\DriverAccount.cpp(8,7): warning C4101: 'availableState': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\DriverAccount.cpp(60,14): warning C4101: 'menuOption': unreferenced local variable
+  DriverRegistration.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\DriverRegistration.cpp(64,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Function.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  Landing.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  LoggedInPages.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\LoggedInPages.cpp(24,15): warning C4101: 'accountType': unreferenced local variable
+  ReadCSV.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  ReadTXT.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  Taxi Project 3.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  UserAccount.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(38,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(46,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(70,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\UserAccount.cpp(69,14): warning C4101: 'menuOption': unreferenced local variable
+  Generating Code...
+  Taxi Project 3.vcxproj -> C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\x64\Debug\Taxi Project 3.exe
