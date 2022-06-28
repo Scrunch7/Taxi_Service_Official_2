@@ -38,11 +38,14 @@ extern struct paymentMethod
 };
 
 extern struct Customer {
-	string fullName;
-	int contactNumber;
+	string firstName;
+	string lastName;
+	string contactNumber;
 	string email;
 	string streetAddress;
 	paymentMethod eftposCard;
+	string username;
+	string password;
 };
 
 extern struct Driver {
