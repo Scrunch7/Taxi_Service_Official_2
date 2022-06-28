@@ -103,3 +103,8 @@ void openClose(string customerFile);
 void custReg(string customerFile);
 void driverRegistration(string driverFile);
 void filloutDriverRego(string driverFile);
+
+//bool checkUserName(string userName);
+bool checkPassword(string input);
+bool checkinput(string type, string input);
+bool checkUsername(string input);
