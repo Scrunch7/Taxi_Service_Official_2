@@ -1,8 +1,9 @@
 #include "Functions.h"
+
 void login(char accountType)
 {
 	// initializing Varables 
-	int counter;
+	int counter = 0;
 	bool runLogged = true;
 	string adminPas = "CrazyTaxi";
 	string pasInput;
@@ -19,13 +20,10 @@ void login(char accountType)
 				throw(accountType);
 			}
 		}
-
-
 		catch (char accountType)
 		{
 			cout << "\nERROR: accountType Invalid";
 		}
-
 		switch (accountType) {
 		case 'a':
 			cout << "\nPlease Enter Admin password: ";
@@ -46,121 +44,149 @@ void login(char accountType)
 			runLogged = false;
 			break;
 
-		case 'd': {
-			counter = 0;
-			bool result;
-
-			try {
-				while (counter < 3) {
-					cout << "\nPlease Enter your Username: ";
-					cin >> userName;
-
-					result = driverCheckUsername(userName);
-
-					if (!result) {
-						cout << "\nDriver not Found";
-					}
-
-				}
-
+			case 'd': {
 				counter = 0;
-				while (counter < 3) {
-					cout << "\nPlease Enter your Password " << userName << ": ";
-					cin >> pasInput;
+				bool result;
 
-					result = driverCheckPassword(pasInput);
+				try {
+					while (counter < 3) {
+						cout << "\nPlease Enter your Username: ";
+						cin >> userName;
 
-					if (!result) {
-						cout << "\nPassword not found\n";
+						result = driverCheckUsername(userName);
+
+						if (!result) {
+							cout << "\nDriver not Found";
+						}
+
 					}
-					if (result) break;
 
-					counter++;
+					counter = 0;
+					while (counter < 3) {
+						cout << "\nPlease Enter your Password " << userName << ": ";
+						cin >> pasInput;
 
-					if (counter >= 3) {
+						result = driverCheckPassword(pasInput);
+
+						if (!result) {
+							cout << "\nPassword not found\n";
+						}
+						if (result) {
+							driverAccount( driverID);
+						}
+
+						counter++;
+
+						if (counter >= 3) {
+							counter = 0;
+							landing();
+						}
+					}//while
+
+				}//try
+				catch (string userName) {
+					cout << "\nThe username '" << userName << "' doesn't exist.\n";
+					runLogged = false;
+					false;
+					break;
+				}//catch
+
+				runLogged = false;
+				break;
+
+				//customer
+
+				case 'u': {
+					int counter = 0;
+
+					bool result;
+
+					try
+					{
+
+						//while loop checking username input
+						while (counter < 3) {
+							cout << "\nPlease enter you username: ";
+							cin >> userName;
+
+							result = userCheckUsername(userName);
+
+							if (!result) cout << "user not found";
+
+							if (result) break;
+
+							counter++;
+
+							if (counter >= 3) {
+								counter = 0;
+								landing();
+							}
+						}
+
+						//checking password input
 						counter = 0;
-						landing();
+
+						while (counter < 3) {
+							cout << "\nPlease Enter your password " << userName << ": ";
+							cin >> pasInput;
+
+							result = userCheckPassword(pasInput);
+
+							if (!result) {
+								cout << "password not found";
+							}
+							//***NEEDS TO LEAD TO BOOKING***
+							if (result) {
+								Booking("username");
+							}
+
+							counter++;
+
+							if (counter >= 3) {
+								counter = 0;
+								landing();
+							}
+						}
+
 					}
-				}//while
 
-			}//try
-			catch (string userName) {
-				cout << "\nThe username '" << userName << "' doesn't exist.\n";
-				runLogged = false;
-				false;
-				break;
-			}//catch
-
-			runLogged = false;
-			break;
-
-			//customer
-
-		case 'u': {
-			counter = 0;
-
-			bool result;
-
-			try
-			{
-
-				//while loop checking username input
-				while (counter < 3) {
-					cout << "\nPlease enter you username: ";
-					cin >> userName;
-
-					result = userCheckUsername(userName);
-
-					if (!result) {
-						cout << "user not found";
+					catch (string userName)
+					{
+						cout << "\nThe username '" << userName << "' doesn't exist.\n";
+						runLogged = false;
+						break;
 					}
-					if (result) break;
+					//
+					for (int i = 0; i < 3; i++)
+					{
+
+					}
+					runLogged = false;
+					break;
+					
+
+
 
 				}
+				default:
+					runLogged = false;
+					break;
 
-				//checking password input
-				counter = 0;
-
-				cout << "\nPlease Enter your password " << userName << ": ";
-				cin >> pasInput;
-
-				result = userCheckPassword(pasInput);
-
-				if (!result) {
-					cout << "password not found";
-				}
-				if (result) break;
 
 
 			}
-			catch (string userName)
-			{
-				cout << "\nThe username '" << userName << "' doesn't exist.\n";
-				runLogged = false;
-				break;
-			}
-			//
-			for (int i = 0; i < 3; i++)
-			{
-
-			}
-			runLogged = false;
-			break;
 		}
 
-				//For observation perpouses, remove  once code is ready
-				while (true)
-				{
-					cout << "\nwait\n";
-					Booking("username");
-				}
-
-
-		}
-		}
 	}
+	//For observation perpouses, remove  once code is ready
+	while (true)
+	{
+		cout << "\nwait\n";
+		int wait;
+		cin >> wait;
+	}
+}//while
 
-	}//while
 bool userCheckUsername(string input)
 {
 	bool result;
@@ -181,6 +207,8 @@ bool userCheckPassword(string input)
 
 bool userCheckInput(string type, string input) {
 	//correct
+	string firstName;
+	string lastName;
 	string contactNum;
 	string address;
 	string email;
@@ -190,11 +218,13 @@ bool userCheckInput(string type, string input) {
 
 
 
-	std::fstream file("customerFile.csv", ios::in);
+	fstream file("customerFile.csv", ios::in);
 
 	if (file.is_open()) {
 
 		while (file.good() && !userFound) {
+			getline(file, firstName, ',');
+			getline(file, lastName, ',');
 			getline(file, contactNum, ',');
 			getline(file, address, ',');
 			getline(file, email, ',');
@@ -223,6 +253,8 @@ bool userCheckInput(string type, string input) {
 	return userFound;
 
 }
+
+//Driver Login------------------------------------
 
 bool driverCheckUsername(string input)
 {
