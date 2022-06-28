@@ -56,7 +56,7 @@ void driverAccount(string driverID)
 				targetedReadCSV("bookings.csv", target);
 				break;
 			case 4:
-				//Driver payment details !must be replaced!
+				//take a taxi Job
 				break;
 			case 5:
 				//Driver payment details !must be replaced!
@@ -74,4 +74,10 @@ void driverAccount(string driverID)
 			cout << "\nInvalid Input.\nPlease input one of the available options\n";
 		}
 	}
+}
+
+void driverPaymentDetails() {
+	//read csv
+	//find driver payment details (driver bankAccount, driver bankName)
+	//output to console
 }
