@@ -102,7 +102,7 @@ void Booking(string username)
     {
 
 
-        //continues running until user wishes to stop their booking attempt (they do not confirm their inputed information and refuse to try booking again) or finish booking
+        //continues running until user wishes to stop their booking attempt (they do not confirm their inputed information and refuse to try booking again) or filenish booking
         while (run == true)
         {
             //explains to user how date is formated
