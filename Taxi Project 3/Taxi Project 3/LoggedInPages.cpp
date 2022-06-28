@@ -59,6 +59,8 @@ void login(char accountType)
 							cout << "\nDriver not Found";
 						}
 
+						if (result) break;
+
 					}
 
 					counter = 0;
@@ -115,12 +117,6 @@ void login(char accountType)
 
 							if (result) break;
 
-							counter++;
-
-							if (counter >= 3) {
-								counter = 0;
-								landing();
-							}
 						}
 
 						//checking password input
