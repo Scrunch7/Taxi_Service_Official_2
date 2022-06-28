@@ -6,6 +6,7 @@ void driverAccount(string driverID)
 	bool runAccount = true;
 	int menuOption = 1;
 	bool availableState;
+	int target;
 
 	//should get the driver's name from the driver file or struct using the driverID !must be replaced!
 	string driverName = "bob";
@@ -17,7 +18,7 @@ void driverAccount(string driverID)
 
 	cout << "\nWhat information you would like to review " << driverName << "?\n";
 	while (runAccount == true) {
-		cout << "\n1 Write Daly Report|2 Trip Number|3 Customer Name|4 Contact number|5 Starting place|6 Destination|7 Date and Time|8 Toggle Available state|9 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
+		cout << "\n1 Write Daly Report|2 Read All Trips|3 read spesific trip|4 take a taxi Job|5 Driver payment details|6 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
 		cin >> menuOption;
 		try
 		{
@@ -26,30 +27,41 @@ void driverAccount(string driverID)
 			case 1:
 				cout <<"\nRemember: \n1.To include the date as you were trained to.\n2.that the enter button submits the report in it's current state.\n3.To include your Driver ID as you were trained to.\n";
 				dWriteTXT("weekly_report");
+				// add fuction the writes to daily report herw !must be replaced!
+
 				break;
 			case 2:
-				//Read trip_booking tripNumber !must be replaced! (t.b.w.n)
+				readCSV("bookings.csv");
 				break;
 			case 3:
-				//Read trip_booking tripUserName !must be replaced! (t.b.w.n)
+				cout << "\nWhich trip would you like to look at?\n:";
+				while (true) 
+				{
+					try 
+					{
+						cin >> target;
+						if (target > 1) {
+							break;
+						}
+						else 
+						{
+							throw(target);
+						}
+					}
+					catch (int target) 
+					{
+						cout << "\nPlease input a valid number\n:";
+					}
+				}
+				targetedReadCSV("bookings.csv", target);
 				break;
 			case 4:
-				//Read trip_booking tripContactNumb !must be replaced! (t.b.w.n)
+				//Driver payment details !must be replaced!
 				break;
 			case 5:
-				//Read trip_booking tripStart !must be replaced! (t.b.w.n)
+				//Driver payment details !must be replaced!
 				break;
 			case 6:
-				//Read trip_booking tripEnd !must be replaced! (t.b.w.n)
-				break;
-			case 7:
-				//Read trip_booking tripTime[0] tripTime[1] tripTime[2] tripTime[4] !must be replaced! (t.b.w.n)
-				//		          (month)      (day)         (hour)     (minute)
-				break;
-			case 8:
-				//Toggle availableState in driver account !must be replaced!
-				break;
-			case 9:
 				runAccount = false;
 				break;
 			default:

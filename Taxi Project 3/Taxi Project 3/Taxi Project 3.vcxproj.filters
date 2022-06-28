@@ -54,6 +54,9 @@
     <ClCompile Include="UserAccount.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TargetedReadCSV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h">

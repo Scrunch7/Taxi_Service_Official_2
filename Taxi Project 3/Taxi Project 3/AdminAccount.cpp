@@ -14,7 +14,7 @@ void adminAccount()
 
 	while (runAccount == true) {
 		//Read complaint_problems userProbCount !must be replaced!
-		cout << "\n1 View and edit Customer Accounts|2 View and edit Driver Accounts|3 View Compliants and Problems|4 User Feedback|5 Weekly Report|6 Cancellation & Registration report|7 System|8 Back to menu\n:";
+		cout << "\n1 View and edit Customer Accounts|2 View and edit Driver Accounts|3 View Compliants and Problems|4 User Feedback|\n5 Weekly Report |6 Daily Report|7 Cancellation & Registration report|8 System|9 Back to menu\n:";
 		cin >> menuOption;
 		try {
 			switch (menuOption)
@@ -41,6 +41,10 @@ void adminAccount()
 				readTXT("weekly_report");
 				break;
 			case 6:
+				//input the daily report here !must be replaced!
+
+				break;
+			case 7:
 				runAccount2 = true;
 				while (runAccount2 == true)
 				{
@@ -71,10 +75,10 @@ void adminAccount()
 				}
 
 				break;
-			case 7:
+			case 8:
 				//(I don’t think we have to do anything for this but we still need to have the placeholder)
 				break;
-			case 8:
+			case 9:
 				runAccount = false;
 				break;
 			default:
