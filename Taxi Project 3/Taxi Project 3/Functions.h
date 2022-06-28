@@ -76,6 +76,7 @@ extern struct Driver {
 	string endorsmentExpiry; //6 months from date of registration (date)
 	string driverUsername;
 	string driverPassword;
+	string availablity; //25
 };
 
 //Functions
