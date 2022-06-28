@@ -149,8 +149,7 @@ void login(char accountType)
 		while (true)
 		{
 			cout << "\nwait\n";
-			int wait;
-			cin >> wait;
+			Booking("username");
 		}
 
 	}

@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <vector>
 #include <sstream>
+#include <cctype>
 
 //stds
 using std::cin;
