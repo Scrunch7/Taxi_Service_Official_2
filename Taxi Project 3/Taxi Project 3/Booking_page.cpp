@@ -21,46 +21,7 @@ int readForID() {
     }
     return id + 1;
 }
-//fuction that might be able to read the booking file
-void readBookingFile() {
-    //creating our varables
-    fstream fileReading;
-    vector <vector <string>> content;
-    vector <string> row;
-    string line, word;
 
-    //assigning the file to read and flag to fileIn
-    fileReading.open("booking_file.csv", ios::in);
-
-    //Determine if a file is openm
-    if (fileReading.is_open())
-    {
-        while (getline(fileReading, line))
-        {
-            row.clear();
-
-            stringstream str(line);
-
-            while (getline(str, word, ','))
-                row.push_back(word);
-            content.push_back(row);
-        }
-    }
-    else
-        cout << "Could not open the file\n";
-
-    for (int i = 0; i < content.size(); i++)
-    {
-        for (int j = 0; j < content[i].size(); j++)
-        {
-            cout << content[i][j] << " ";
-        }
-        cout << "\n";
-    }
-
-
-    return;
-}
 //sends details to bookings.csv
 void bookTaxi(int month, int day, int hour, int minute, string name, string destinationName, double destinationkm, char destinationID, double total, int passengerCount, string specialNeeds, char Luggage, string paymentStatus) {
     fstream fileBooking;
