@@ -101,14 +101,11 @@ void login(char accountType)
 			break;
 		}
 				//customer login -----------------------------------------------------------------------------------------------------
-		case 'u': {
+			case 'u': {
 
-			int uCounter = 0;
+				int uCounter = 0;
 
-			bool result;
-
-			try
-			{
+				bool result;
 
 				//while loop checking username input
 				while (uCounter < 3) {
@@ -155,40 +152,25 @@ void login(char accountType)
 
 
 			}
-			catch (string userName)
-			{
-				cout << "\nThe username '" << userName << "' doesn't exist.\n";
-				runLogged = false;
-				break;
-			}
-			//
-			for (int i = 0; i < 3; i++)
-			{
 
-			}
-			runLogged = false;
-			break;
 		}
-		default:
-			runLogged = false;
-			break;
+
+
+
+
+
+
+
+
+
+		//For observation perpouses, remove  once code is ready
+		while (true)
+		{
+			cout << "\nwait\n";
+			int wait;
+			cin >> wait;
 		}
-	}
 
-
-
-
-
-
-
-
-
-	//For observation perpouses, remove  once code is ready
-	while (true)
-	{
-		cout << "\nwait\n";
-		int wait;
-		cin >> wait;
 	}
 }
 
@@ -327,23 +309,6 @@ bool checkinput(string type, string input) {
 
 
 		}
-
-
-		//if (type == "password") {
-		//	while (file.good() && !userFound) {
-		//		getline(file, firstName, ',');
-		//		getline(file, lastName, ',');
-		//		getline(file, contactNum, ',');
-		//		getline(file, address, ',');
-		//		getline(file, email, ',');
-		//		getline(file, username, ',');
-		//		getline(file, password, '\n');
-		//		if (input == password) {
-		//			userFound = true;
-		//		}
-
-		//	}
-		//}
 	}
 	else {
 		cout << "failed to open file\n";
