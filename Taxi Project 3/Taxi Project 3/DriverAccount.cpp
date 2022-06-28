@@ -58,6 +58,7 @@ void driverAccount(string driverID)
 				dWriteTXT("weekly_report");
 				break;
 			case 2:
+				cout << "\nBooking ID|Main Passenger Name|Month|Day|Hour|Minute|Destination Name|Distance km|Destination ID|Total Payment|Passenger Count|Special Needs|Luggage|Payment Status\n";
 				readCSV("bookings");
 				break;
 			case 3:
@@ -80,6 +81,7 @@ void driverAccount(string driverID)
 						cout << "\nPlease input a valid number\n:";
 					}
 				}
+				cout << "\nBooking ID|Main Passenger Name|Month|Day|Hour|Minute|Destination Name|Distance km|Destination ID|Total Payment|Passenger Count|Special Needs|Luggage|Payment Status\n";
 				targetedReadCSV("bookings", target);
 				break;
 			case 4:
