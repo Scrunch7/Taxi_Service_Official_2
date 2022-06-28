@@ -58,7 +58,7 @@ void driverAccount(string driverID)
 				dWriteTXT("weekly_report");
 				break;
 			case 2:
-				readCSV("bookings.csv");
+				readCSV("bookings");
 				break;
 			case 3:
 				cout << "\nWhich trip would you like to look at?\n:";
@@ -80,13 +80,14 @@ void driverAccount(string driverID)
 						cout << "\nPlease input a valid number\n:";
 					}
 				}
-				targetedReadCSV("bookings.csv", target);
+				targetedReadCSV("bookings", target);
 				break;
 			case 4:
 				
 				break;
 			case 5:
 				//Driver payment details !must be replaced!
+				readTXT("payment_details");
 				break;
 			case 6:
 				runAccount = false;

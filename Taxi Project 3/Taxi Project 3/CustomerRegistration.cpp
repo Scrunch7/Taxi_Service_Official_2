@@ -9,6 +9,30 @@ void custReg(string customerFile)
 	landing();
 }
 
+void logRegistration(string fileName, string username)
+{
+	ofstream myFile;
+	string myLine;
+
+	myFile.open(fileName + ".txt", std::ios::app);
+
+	if (!myFile.is_open())
+	{
+		cout << "\nWARNING: File failed to open\n";
+		return;
+	}
+	cout << "\n" << fileName << " opened:\n\n";
+
+	getline(cin, username);
+	myFile << username << "'s Account has been created" << endl << endl;
+
+	myFile.close();
+	if (!myFile.is_open())
+	{
+		cout << "\n" << fileName << " closed.\n\n";
+	}
+}
+
 void openClose(string customerFile) {
 
 	//Creates a new variable file of type output file system (ofstream)
@@ -51,7 +75,8 @@ void openClose(string customerFile) {
 
 	//Close the file assigned to myFile
 	myFile.close();
-
+	//logs registration in registration_report
+	logRegistration("registration_report", test.username);
 	
 
 }

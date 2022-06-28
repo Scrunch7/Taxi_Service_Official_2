@@ -14,7 +14,7 @@ void adminAccount()
 
 	while (runAccount == true) {
 		//Read complaint_problems userProbCount !must be replaced!
-		cout << "\n1 View and edit Customer Accounts|2 View and edit Driver Accounts|3 View Compliants and Problems|4 User Feedback|\n5 Weekly Report |6 Daily Report|7 Cancellation & Registration report|8 System|9 Back to menu\n:";
+		cout << "\n1 View Customer Accounts|2 View Driver Accounts|3 View Compliants and Problems|4 User Feedback|\n5 Weekly Report |6 Daily Report|7 Cancellation & Registration report|8 System|9 Back to menu\n:";
 		cin >> menuOption;
 		try {
 			switch (menuOption)
@@ -22,14 +22,10 @@ void adminAccount()
 			case 1:
 				//Function for reading
 				readCSV("customerFile");
-				//Function for editing
-				//Function add for editing here !must be replaced!
 				break;
 			case 2:
 				//Function for reading
 				readCSV("driverFile");
-				//Function for editing
-				//Function add for editing here !must be replaced!
 				break;
 			case 3:
 				readTXT("complaint_problems");
@@ -54,10 +50,10 @@ void adminAccount()
 						switch (menuOption)
 						{
 						case 1:
-							readCSV("cancellation_report");
+							readTXT("cancellation_report");
 							break;
 						case 2:
-							readCSV("registration_report");
+							readTXT("registration_report");
 							break;
 						case 3:
 							runAccount2 = false;
