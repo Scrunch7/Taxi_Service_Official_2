@@ -103,8 +103,6 @@ void login(char accountType)
 				//customer login -----------------------------------------------------------------------------------------------------
 			case 'u': {
 
-				int uCounter = 0;
-
 				bool result;
 
 				//while loop checking username input
@@ -119,12 +117,6 @@ void login(char accountType)
 					}
 					if (result) break;
 
-					uCounter++;
-
-					if (uCounter >= 3) {
-						uCounter = 0;
-						landing();
-					}
 				}
 
 				//checking password input
@@ -149,19 +141,9 @@ void login(char accountType)
 				}
 
 
-
-
 			}
 
 		}
-
-
-
-
-
-
-
-
 
 		//For observation perpouses, remove  once code is ready
 		while (true)
