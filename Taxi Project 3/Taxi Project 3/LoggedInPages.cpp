@@ -19,10 +19,13 @@ void login(char accountType)
 				throw(accountType);
 			}
 		}
+
+
 		catch (char accountType)
 		{
 			cout << "\nERROR: accountType Invalid";
 		}
+
 		switch (accountType) {
 		case 'a':
 			cout << "\nPlease Enter Admin password: ";
@@ -44,7 +47,7 @@ void login(char accountType)
 			break;
 
 		case 'd': {
-			counter=0;
+			counter = 0;
 			bool result;
 
 			try {
@@ -81,12 +84,12 @@ void login(char accountType)
 				}//while
 
 			}//try
-				catch (string userName) {
+			catch (string userName) {
 				cout << "\nThe username '" << userName << "' doesn't exist.\n";
 				runLogged = false;
 				false;
 				break;
-				}//catch
+			}//catch
 
 			runLogged = false;
 			break;
@@ -94,7 +97,7 @@ void login(char accountType)
 			//customer
 
 		case 'u': {
-			 counter = 0;
+			counter = 0;
 
 			bool result;
 
@@ -145,16 +148,19 @@ void login(char accountType)
 			break;
 		}
 
-		//For observation perpouses, remove  once code is ready
-		while (true)
-		{
-			cout << "\nwait\n";
-			Booking("username");
+				//For observation perpouses, remove  once code is ready
+				while (true)
+				{
+					cout << "\nwait\n";
+					Booking("username");
+				}
+
+
 		}
-
+		}
 	}
-}
 
+	}//while
 bool userCheckUsername(string input)
 {
 	bool result;
