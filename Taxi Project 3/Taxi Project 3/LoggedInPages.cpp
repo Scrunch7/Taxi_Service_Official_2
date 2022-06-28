@@ -1,8 +1,8 @@
 #include "Functions.h"
-
 void login(char accountType)
 {
 	// initializing Varables 
+	int counter;
 	bool runLogged = true;
 	string adminPas = "CrazyTaxi";
 	string pasInput;
@@ -43,21 +43,58 @@ void login(char accountType)
 			runLogged = false;
 			break;
 
-			//driver
 		case 'd': {
-			int dCounter = 0;
+			counter=0;
 			bool result;
 
 			try {
-				while (ucounter < 3)
-			}
+				while (counter < 3) {
+					cout << "\nPlease Enter your Username: ";
+					cin >> userName;
 
-		}
+					result = driverCheckUsername(userName);
 
-		//customer
+					if (!result) {
+						cout << "\nDriver not Found";
+					}
+
+				}
+
+				counter = 0;
+				while (counter < 3) {
+					cout << "\nPlease Enter your Password " << userName << ": ";
+					cin >> pasInput;
+
+					result = driverCheckPassword(pasInput);
+
+					if (!result) {
+						cout << "\nPassword not found\n";
+					}
+					if (result) break;
+
+					counter++;
+
+					if (counter >= 3) {
+						counter = 0;
+						landing();
+					}
+				}//while
+
+			}//try
+				catch (string userName) {
+				cout << "\nThe username '" << userName << "' doesn't exist.\n";
+				runLogged = false;
+				false;
+				break;
+				}//catch
+
+			runLogged = false;
+			break;
+
+			//customer
+
 		case 'u': {
-
-			int uCounter = 0;
+			 counter = 0;
 
 			bool result;
 
@@ -65,45 +102,39 @@ void login(char accountType)
 			{
 
 				//while loop checking username input
-				while (uCounter < 3) {
+				while (counter < 3) {
 					cout << "\nPlease enter you username: ";
 					cin >> userName;
 
-					result = checkUsername(userName);
+					result = userCheckUsername(userName);
 
 					if (!result) {
 						cout << "user not found";
 					}
 					if (result) break;
 
-					uCounter++;
+					counter++;
 
-					if (uCounter >= 3) {
-						uCounter = 0;
+					if (counter >= 3) {
+						counter = 0;
 						landing();
 					}
 				}
 
 				//checking password input
-				uCounter = 0;
-				while (uCounter < 3) {
-					cout << "\nPlease Enter your password " << userName << ": ";
-					cin >> pasInput;
+				counter = 0;
 
-					result = checkPassword(pasInput);
+				cout << "\nPlease Enter your password " << userName << ": ";
+				cin >> pasInput;
 
-					if (!result) {
-						cout << "password not found";
-					}
-					if (result) break;
+				result = userCheckPassword(pasInput);
 
-					uCounter++;
-
-					if (uCounter >= 3) {
-						uCounter = 0;
-						landing();
-					}
+				if (!result) {
+					cout << "password not found";
 				}
+				if (result) break;
+
+
 			}
 			catch (string userName)
 			{
@@ -119,41 +150,43 @@ void login(char accountType)
 			runLogged = false;
 			break;
 		}
+
 		default:
 			runLogged = false;
 			break;
 		}
-	}
-	//For observation perpouses, remove  once code is ready
-	while (true)
-	{
-		cout << "\nwait\n";
-		int wait;
-		cin >> wait;
+		}
+		//For observation perpouses, remove  once code is ready
+		while (true)
+		{
+			cout << "\nwait\n";
+			int wait;
+			cin >> wait;
+		}
+
 	}
 }
 
-//functions
-bool checkUsername(string input)
+bool userCheckUsername(string input)
 {
 	bool result;
 	string type = "username";
-	result = checkinput(type, input);
+	result = userCheckInput(type, input);
 	return result;
+
 }
 
-bool checkPassword(string input)
+bool userCheckPassword(string input)
 {
 	bool result;
 	string type = "password";
-	result = checkinput(type, input);
+	result = userCheckInput(type, input);
 	return result;
+
 }
 
-bool checkinput(string type, string input) {
-
-	string firstName;
-	string lastName;
+bool userCheckInput(string type, string input) {
+	//correct
 	string contactNum;
 	string address;
 	string email;
@@ -168,8 +201,6 @@ bool checkinput(string type, string input) {
 	if (file.is_open()) {
 
 		while (file.good() && !userFound) {
-			getline(file, firstName, ',');
-			getline(file, lastName, ',');
 			getline(file, contactNum, ',');
 			getline(file, address, ',');
 			getline(file, email, ',');
@@ -188,6 +219,7 @@ bool checkinput(string type, string input) {
 				}
 			}
 
+
 		}
 	}
 	else {
@@ -195,4 +227,96 @@ bool checkinput(string type, string input) {
 	}
 
 	return userFound;
+
 }
+
+bool driverCheckUsername(string input)
+{
+	bool result;
+	string type = "username";
+	result = driverCheckInput(type, input);
+	return result;
+
+}
+
+bool driverCheckPassword(string input)
+{
+	bool result;
+	string type = "password";
+	result = driverCheckInput(type, input);
+	return result;
+
+}
+
+bool driverCheckInput(string type, string input) {
+	string username;
+	string password;
+	string firstName;
+	string lastName;
+	string gender; 
+	string DoB; 
+	string nationality;
+	string licenceNumber;
+	string expiryDate; 
+	string yearsDriving; 
+	string contactNumber;
+	string email;
+	string address;
+	string bankAccountNumber;
+	string bankName;
+	string vehicleRegoNum;
+	string vehicleMake;
+	string vehicleModel;
+	string wofExpiryDate;
+	string endorsmentNumber; 
+	string endorsmentExpiry; 
+	bool userFound = false;
+
+	std::fstream file("driverFile.csv", ios::in);
+
+	if (file.is_open()) {
+
+		while (file.good() && !userFound) {
+			getline(file, username, ',');
+			getline(file, password, ',');
+			getline(file, firstName, ',');
+			getline(file, lastName, ',');
+			getline(file, gender, ',');
+			getline(file, DoB, ',');
+			getline(file, nationality, ',');
+			getline(file, licenceNumber, ',');
+			getline(file, expiryDate, ',');
+			getline(file, yearsDriving, ',');
+			getline(file, contactNumber, ',');
+			getline(file, email, ',');
+			getline(file, address, ',');
+			getline(file, bankAccountNumber, ',');
+			getline(file, bankName, ',');
+			getline(file, vehicleRegoNum, ',');
+			getline(file, vehicleMake, ',');
+			getline(file, vehicleModel, ',');
+			getline(file, wofExpiryDate, ',');
+			getline(file, endorsmentNumber, ',');
+			getline(file, endorsmentExpiry, '\n');
+			if (type == "username") {
+				if (input == username) {
+					userFound = true;
+
+				}
+			}
+			if (type == "password") {
+				if (input == password) {
+					userFound = true;
+
+				}
+			}
+		}
+	}
+	else {
+		cout << "failed to open file\n";
+	}
+
+	return userFound;
+
+}
+

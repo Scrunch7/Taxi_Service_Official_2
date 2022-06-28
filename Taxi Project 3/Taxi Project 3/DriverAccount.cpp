@@ -18,17 +18,17 @@ void driverAccount(string driverID)
 
 	cout << "\nWhat information you would like to review " << driverName << "?\n";
 	while (runAccount == true) {
-		cout << "\n1 Write Daly Report|2 Read All Trips|3 read spesific trip|4 take a taxi Job|5 Driver payment details|6 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
+		cout << "\n1 Write Daily and Weekly Report|2 Read All Trips|3 read spesific trip|4 take a taxi Job|5 Driver payment details|6 Back to menu\nMake sure you have or will write your daily report as per Company Procedure\n:";
 		cin >> menuOption;
 		try
 		{
 			switch (menuOption)
 			{
 			case 1:
-				cout <<"\nRemember: \n1.To include the date as you were trained to.\n2.that the enter button submits the report in it's current state.\n3.To include your Driver ID as you were trained to.\n";
+				cout <<"\nRemember: \n1.To include the date as you were trained to.\n2.that the enter button submits the report in it's current state.\n3.To include your Driver ID as you were trained to.\n\nDaily report: ";
+				dWriteTXT("daily_report");
+				cout << "\n\nWeekly report: ";
 				dWriteTXT("weekly_report");
-				// add fuction the writes to daily report herw !must be replaced!
-
 				break;
 			case 2:
 				readCSV("bookings.csv");

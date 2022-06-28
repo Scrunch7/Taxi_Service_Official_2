@@ -41,8 +41,7 @@ void adminAccount()
 				readTXT("weekly_report");
 				break;
 			case 6:
-				//input the daily report here !must be replaced!
-
+				readTXT("daily_report");
 				break;
 			case 7:
 				runAccount2 = true;
