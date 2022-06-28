@@ -53,7 +53,7 @@ extern struct Driver {
 
 	string firstName;
 	string lastName;
-	char gender; //male, female, other
+	string gender; //male, female, other
 	string DoB;
 	string DoB_Day;
 	string DoB_Month;//date of birth
@@ -71,9 +71,8 @@ extern struct Driver {
 	string vehicleMake;
 	string vehicleModel;
 	string wofExpiryDate;
-	int endorsmentNumber; //srand
+	string endorsmentNumber; //srand
 	string endorsmentExpiry; //6 months from date of registration (date)
-	string randomBS;
 	string driverUsername;
 	string driverPassword;
 };
@@ -107,7 +106,10 @@ void custReg(string customerFile);
 void driverRegistration(string driverFile);
 void filloutDriverRego(string driverFile);
 
-//bool checkUserName(string userName);
-bool checkPassword(string input);
-bool checkinput(string type, string input);
-bool checkUsername(string input);
+bool userCheckPassword(string input);
+bool userCheckInput(string type, string input);
+bool userCheckUsername(string input);
+
+bool driverCheckInput(string type, string input);
+bool driverCheckUsername(string input);
+bool driverCheckPassword(string input);

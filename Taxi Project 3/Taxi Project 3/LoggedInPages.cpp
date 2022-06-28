@@ -1,9 +1,8 @@
 #include "Functions.h"
-
 void login(char accountType)
 {
 	// initializing Varables 
-	int uCounter = 0;
+	int counter;
 	bool runLogged = true;
 	string adminPas = "CrazyTaxi";
 	string pasInput;
@@ -43,126 +42,120 @@ void login(char accountType)
 			}
 			runLogged = false;
 			break;
+
 		case 'd': {
+			counter=0;
+			bool result;
 
+			try {
+				while (counter < 3) {
+					cout << "\nPlease Enter your Username: ";
+					cin >> userName;
 
-			//supposed to get total amount of drivers !must be replaced!
-			int driverCount = 10;
-			// string That Reads A File Or Struct That Holds All Driver Information And Gets The IDList !must be replaced!
-			string driverIDlist[10] = { "dr1", "dr2", "dr3", "dr4", "dr5" , "dr6" , "dr7" , "dr8" , "dr9" , "dr10" };
-			//place holder for aformentioned File Or Struct but storing passwords!must be replaced!
-			string driverpasswordList[10] = { "p1", "p2", "p3", "p4", "p5" , "p6" , "p7" , "p8" , "p9" , "p10" };
-			int dCounter = 0;
-			try
-			{
-				cout << "\nPlease enter your Driver ID: ";
-				cin >> driverID;
-				while (dCounter <= driverCount && search == true)
-				{
-					if (driverID == driverIDlist[dCounter])
-					{
-						search = false;
-						throw(driverID);
+					result = driverCheckUsername(userName);
+
+					if (!result) {
+						cout << "\nDriver not Found";
 					}
-					dCounter++;
+
 				}
-				if (dCounter > driverCount)
-				{
-					cout << "\nNo such ID exists.\n";
-				}
-				else
-				{
-					//string userpassword [uCounter];
-					string password = driverpasswordList[dCounter];
-					cout << "\nPlease Enter your password " << userName << ": ";
+
+				counter = 0;
+				while (counter < 3) {
+					cout << "\nPlease Enter your Password " << userName << ": ";
 					cin >> pasInput;
-					for (int i = 0; i < 3; i++)
-					{
-						if (pasInput == password)
-						{
-							driverAccount(driverID);
-							i = 3;
-						}
-						else
-						{
-							cout << "\nIncorrect password.\n" << 3 - i << " Tries left \nPlease Enter correct password: ";
-							cin >> pasInput;
-						}
+
+					result = driverCheckPassword(pasInput);
+
+					if (!result) {
+						cout << "\nPassword not found\n";
 					}
-				}
-			}
-			catch (string userName)
-			{
-				cout << "\nNo such ID exists.\n";
+					if (result) break;
+
+					counter++;
+
+					if (counter >= 3) {
+						counter = 0;
+						landing();
+					}
+				}//while
+
+			}//try
+				catch (string userName) {
+				cout << "\nThe username '" << userName << "' doesn't exist.\n";
 				runLogged = false;
+				false;
 				break;
-			}
+				}//catch
+
 			runLogged = false;
 			break;
-		}
-				//customer login -----------------------------------------------------------------------------------------------------
-			case 'u': {
 
-				int uCounter = 0;
+			//customer
 
-				bool result;
+		case 'u': {
+			 counter = 0;
+
+			bool result;
+
+			try
+			{
 
 				//while loop checking username input
-				while (uCounter < 3) {
+				while (counter < 3) {
 					cout << "\nPlease enter you username: ";
 					cin >> userName;
 
-					result = checkUsername(userName);
+					result = userCheckUsername(userName);
 
 					if (!result) {
 						cout << "user not found";
 					}
 					if (result) break;
 
-					uCounter++;
+					counter++;
 
-					if (uCounter >= 3) {
-						uCounter = 0;
+					if (counter >= 3) {
+						counter = 0;
 						landing();
 					}
 				}
 
 				//checking password input
-				uCounter = 0;
-				while (uCounter < 3) {
-					cout << "\nPlease Enter your password " << userName << ": ";
-					cin >> pasInput;
+				counter = 0;
 
-					result = checkPassword(pasInput);
+				cout << "\nPlease Enter your password " << userName << ": ";
+				cin >> pasInput;
 
-					if (!result) {
-						cout << "password not found";
-					}
-					if (result) break;
+				result = userCheckPassword(pasInput);
 
-					uCounter++;
-
-					if (uCounter >= 3) {
-						uCounter = 0;
-						landing();
-					}
+				if (!result) {
+					cout << "password not found";
 				}
-
-
+				if (result) break;
 
 
 			}
+			catch (string userName)
+			{
+				cout << "\nThe username '" << userName << "' doesn't exist.\n";
+				runLogged = false;
+				break;
+			}
+			//
+			for (int i = 0; i < 3; i++)
+			{
 
+			}
+			runLogged = false;
+			break;
 		}
 
-
-
-
-
-
-
-
-
+		default:
+			runLogged = false;
+			break;
+		}
+		}
 		//For observation perpouses, remove  once code is ready
 		while (true)
 		{
@@ -174,105 +167,26 @@ void login(char accountType)
 	}
 }
 
-//bool checkUserName(string usernameInput)
-//{
-//	string firstName;
-//	string lastName;
-//	string contactNum;
-//	string address;
-//	string email;
-//	string username;
-//	string password;
-//	bool userFound = false;
-//
-//	std::fstream file("customerFile.csv", ios::in);
-//
-//	if (file.is_open()) {
-//
-//
-//		while (file.good() && !userFound) {
-//			getline(file, firstName, ',');
-//			getline(file, lastName, ',');
-//			getline(file, contactNum, ',');
-//			getline(file, address, ',');
-//			getline(file, email, ',');
-//			getline(file, username, ',');
-//			getline(file, password, '\n');
-//			if (usernameInput == username) {
-//					userFound = true;
-//			}
-//
-//		}
-//	}
-//	else {
-//		cout << "failed to open file\n";
-//	}
-//
-//	return userFound;
-//
-//}
-
-
-//bool checkPassword(string passwordInput)
-//{
-//	string firstName;
-//	string lastName;
-//	string contactNum;
-//	string address;
-//	string email;
-//	string username;
-//	string password;
-//	bool userFound = false;
-//
-//	std::fstream file("customerFile.csv", ios::in);
-//
-//	if (file.is_open()) {
-//
-//
-//		while (file.good() && !userFound) {
-//			getline(file, firstName, ',');
-//			getline(file, lastName, ',');
-//			getline(file, contactNum, ',');
-//			getline(file, address, ',');
-//			getline(file, email, ',');
-//			getline(file, username, ',');
-//			getline(file, password, '\n');
-//			if (passwordInput == password) {
-//				userFound = true;
-//			}
-//
-//		}
-//	}
-//	else {
-//		cout << "failed to open file\n";
-//	}
-//
-//	return userFound;
-//
-//}
-
-bool checkUsername(string input)
+bool userCheckUsername(string input)
 {
 	bool result;
 	string type = "username";
-	result = checkinput(type, input);
+	result = userCheckInput(type, input);
 	return result;
 
 }
 
-bool checkPassword(string input)
+bool userCheckPassword(string input)
 {
 	bool result;
 	string type = "password";
-	result = checkinput(type, input);
+	result = userCheckInput(type, input);
 	return result;
 
 }
 
-bool checkinput(string type, string input) {
-
-	string firstName;
-	string lastName;
+bool userCheckInput(string type, string input) {
+	//correct
 	string contactNum;
 	string address;
 	string email;
@@ -287,8 +201,6 @@ bool checkinput(string type, string input) {
 	if (file.is_open()) {
 
 		while (file.good() && !userFound) {
-			getline(file, firstName, ',');
-			getline(file, lastName, ',');
 			getline(file, contactNum, ',');
 			getline(file, address, ',');
 			getline(file, email, ',');
@@ -317,3 +229,94 @@ bool checkinput(string type, string input) {
 	return userFound;
 
 }
+
+bool driverCheckUsername(string input)
+{
+	bool result;
+	string type = "username";
+	result = driverCheckInput(type, input);
+	return result;
+
+}
+
+bool driverCheckPassword(string input)
+{
+	bool result;
+	string type = "password";
+	result = driverCheckInput(type, input);
+	return result;
+
+}
+
+bool driverCheckInput(string type, string input) {
+	string username;
+	string password;
+	string firstName;
+	string lastName;
+	string gender; 
+	string DoB; 
+	string nationality;
+	string licenceNumber;
+	string expiryDate; 
+	string yearsDriving; 
+	string contactNumber;
+	string email;
+	string address;
+	string bankAccountNumber;
+	string bankName;
+	string vehicleRegoNum;
+	string vehicleMake;
+	string vehicleModel;
+	string wofExpiryDate;
+	string endorsmentNumber; 
+	string endorsmentExpiry; 
+	bool userFound = false;
+
+	std::fstream file("driverFile.csv", ios::in);
+
+	if (file.is_open()) {
+
+		while (file.good() && !userFound) {
+			getline(file, username, ',');
+			getline(file, password, ',');
+			getline(file, firstName, ',');
+			getline(file, lastName, ',');
+			getline(file, gender, ',');
+			getline(file, DoB, ',');
+			getline(file, nationality, ',');
+			getline(file, licenceNumber, ',');
+			getline(file, expiryDate, ',');
+			getline(file, yearsDriving, ',');
+			getline(file, contactNumber, ',');
+			getline(file, email, ',');
+			getline(file, address, ',');
+			getline(file, bankAccountNumber, ',');
+			getline(file, bankName, ',');
+			getline(file, vehicleRegoNum, ',');
+			getline(file, vehicleMake, ',');
+			getline(file, vehicleModel, ',');
+			getline(file, wofExpiryDate, ',');
+			getline(file, endorsmentNumber, ',');
+			getline(file, endorsmentExpiry, '\n');
+			if (type == "username") {
+				if (input == username) {
+					userFound = true;
+
+				}
+			}
+			if (type == "password") {
+				if (input == password) {
+					userFound = true;
+
+				}
+			}
+		}
+	}
+	else {
+		cout << "failed to open file\n";
+	}
+
+	return userFound;
+
+}
+

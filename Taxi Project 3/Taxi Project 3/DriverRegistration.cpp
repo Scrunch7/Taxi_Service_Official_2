@@ -69,7 +69,7 @@ void filloutDriverRego(string driverFile) {
 	for (int i = 100000; i < 999999; i++) {
 		test.endorsmentNumber = (rand() % 999999) + 1;
 	}
-
+	string (test.endorsmentNumber);
 	test.endorsmentExpiry = "9/06/2024"; //find way to generate random
 	
 	DrawLine(15);
@@ -88,7 +88,9 @@ void filloutDriverRego(string driverFile) {
 		cout << "\nPasswords Do Not Match\nPlease re-enter passwword\n";
 	}
 	
-	myFile << test.firstName << ","
+	myFile << test.driverUsername << ","
+		<< test.driverPassword << ","
+		<< test.firstName << ","
 		<< test.lastName << ","
 		<< test.gender << ","
 		<< test.DoB << ","
@@ -105,9 +107,7 @@ void filloutDriverRego(string driverFile) {
 		<< test.vehicleModel << ","
 		<< test.wofExpiryDate << ","
 		<< test.endorsmentNumber << ","
-		<< test.endorsmentExpiry << "," 
-		<< test.driverUsername<< ","
-		<< test.driverPassword << endl;
+		<< test.endorsmentExpiry << endl;
 
 	myFile.close();
 
