@@ -102,6 +102,9 @@ void login(char accountType)
 		}
 				//customer login -----------------------------------------------------------------------------------------------------
 		case 'u': {
+
+			int uCounter = 0;
+
 			bool result;
 
 			try
@@ -115,18 +118,18 @@ void login(char accountType)
 					result = checkUsername(userName);
 
 					if (!result) {
-						cout << "user not found\n";
+						cout << "user not found";
 					}
 					if (result) break;
 
 					uCounter++;
-					
+
 					if (uCounter >= 3) {
 						uCounter = 0;
 						landing();
 					}
 				}
-							
+
 				//checking password input
 				uCounter = 0;
 				while (uCounter < 3) {
@@ -136,7 +139,7 @@ void login(char accountType)
 					result = checkPassword(pasInput);
 
 					if (!result) {
-						cout << "password not found\n";
+						cout << "password not found";
 					}
 					if (result) break;
 
@@ -147,9 +150,9 @@ void login(char accountType)
 						landing();
 					}
 				}
-				
 
-				
+
+
 
 			}
 			catch (string userName)
@@ -171,4 +174,181 @@ void login(char accountType)
 			break;
 		}
 	}
+
+
+
+
+
+
+
+
+
+	//For observation perpouses, remove  once code is ready
+	while (true)
+	{
+		cout << "\nwait\n";
+		int wait;
+		cin >> wait;
+	}
+}
+
+//bool checkUserName(string usernameInput)
+//{
+//	string firstName;
+//	string lastName;
+//	string contactNum;
+//	string address;
+//	string email;
+//	string username;
+//	string password;
+//	bool userFound = false;
+//
+//	std::fstream file("customerFile.csv", ios::in);
+//
+//	if (file.is_open()) {
+//
+//
+//		while (file.good() && !userFound) {
+//			getline(file, firstName, ',');
+//			getline(file, lastName, ',');
+//			getline(file, contactNum, ',');
+//			getline(file, address, ',');
+//			getline(file, email, ',');
+//			getline(file, username, ',');
+//			getline(file, password, '\n');
+//			if (usernameInput == username) {
+//					userFound = true;
+//			}
+//
+//		}
+//	}
+//	else {
+//		cout << "failed to open file\n";
+//	}
+//
+//	return userFound;
+//
+//}
+
+
+//bool checkPassword(string passwordInput)
+//{
+//	string firstName;
+//	string lastName;
+//	string contactNum;
+//	string address;
+//	string email;
+//	string username;
+//	string password;
+//	bool userFound = false;
+//
+//	std::fstream file("customerFile.csv", ios::in);
+//
+//	if (file.is_open()) {
+//
+//
+//		while (file.good() && !userFound) {
+//			getline(file, firstName, ',');
+//			getline(file, lastName, ',');
+//			getline(file, contactNum, ',');
+//			getline(file, address, ',');
+//			getline(file, email, ',');
+//			getline(file, username, ',');
+//			getline(file, password, '\n');
+//			if (passwordInput == password) {
+//				userFound = true;
+//			}
+//
+//		}
+//	}
+//	else {
+//		cout << "failed to open file\n";
+//	}
+//
+//	return userFound;
+//
+//}
+
+bool checkUsername(string input)
+{
+	bool result;
+	string type = "username";
+	result = checkinput(type, input);
+	return result;
+
+}
+
+bool checkPassword(string input)
+{
+	bool result;
+	string type = "password";
+	result = checkinput(type, input);
+	return result;
+
+}
+
+bool checkinput(string type, string input) {
+
+	string firstName;
+	string lastName;
+	string contactNum;
+	string address;
+	string email;
+	string username;
+	string password;
+	bool userFound = false;
+
+
+
+	std::fstream file("customerFile.csv", ios::in);
+
+	if (file.is_open()) {
+
+		while (file.good() && !userFound) {
+			getline(file, firstName, ',');
+			getline(file, lastName, ',');
+			getline(file, contactNum, ',');
+			getline(file, address, ',');
+			getline(file, email, ',');
+			getline(file, username, ',');
+			getline(file, password, '\n');
+			if (type == "username") {
+				if (input == username) {
+					userFound = true;
+
+				}
+			}
+			if (type == "password") {
+				if (input == password) {
+					userFound = true;
+
+				}
+			}
+
+
+		}
+
+
+		//if (type == "password") {
+		//	while (file.good() && !userFound) {
+		//		getline(file, firstName, ',');
+		//		getline(file, lastName, ',');
+		//		getline(file, contactNum, ',');
+		//		getline(file, address, ',');
+		//		getline(file, email, ',');
+		//		getline(file, username, ',');
+		//		getline(file, password, '\n');
+		//		if (input == password) {
+		//			userFound = true;
+		//		}
+
+		//	}
+		//}
+	}
+	else {
+		cout << "failed to open file\n";
+	}
+
+	return userFound;
+
 }
