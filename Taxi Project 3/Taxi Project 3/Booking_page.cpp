@@ -35,11 +35,11 @@ void bookTaxi(int month, int day, int hour, int minute, string name, string dest
 
 
     if (minute < 10) {
-        fileBooking << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", 0" << minute << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << ", " << passengerCount << ", " << specialNeeds << ", " << Luggage << ", " << paymentStatus << "\n";
+        fileBooking << "\n" << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", 0" << minute << ", "  << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << ", " << passengerCount << ", " << specialNeeds << ", " << Luggage << ", " << paymentStatus;
     }
     else
     {
-        fileBooking << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", " << minute << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << ", " << passengerCount << ", " << specialNeeds << ", " << Luggage << ", " << paymentStatus << "\n";
+        fileBooking << "\n" << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", " << minute << ", " << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << ", " << passengerCount << ", " << specialNeeds << ", " << Luggage << ", " << paymentStatus;
     }
 
     fileBooking.close();
