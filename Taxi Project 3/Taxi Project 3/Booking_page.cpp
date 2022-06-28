@@ -62,7 +62,7 @@ void readBookingFile() {
     return;
 }
 //sends details to bookings.csv
-void bookTaxi(int month, int day, int hour, int minute, string name, string destinationName, double destinationkm, char destinationID, double total) {
+void bookTaxi(int month, int day, int hour, int minute, string name, string destinationName, double destinationkm, char destinationID, double total, int passengerCount, string specialNeeds, char Luggage, string paymentStatus) {
     fstream fileBooking;
     int booking_id = readForID();
     fileBooking.open("bookings.csv", ios::out | ios::app);
@@ -74,15 +74,15 @@ void bookTaxi(int month, int day, int hour, int minute, string name, string dest
 
 
     if (minute < 10) {
-        fileBooking << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", 0" << minute << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << "\n";
+        fileBooking << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", 0" << minute << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << ", " << passengerCount << ", " << specialNeeds << ", " << Luggage << ", " << paymentStatus << ", Unclaimed" << "\n";
     }
     else
     {
-        fileBooking << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", " << minute << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << "\n";
+        fileBooking << booking_id << ", " << name << ", " << month << ", " << day << ", " << hour << ", " << minute << destinationName << ", " << destinationkm << ", " << destinationID << ", " << total << ", " << passengerCount << ", " << specialNeeds << ", " << Luggage << ", " << paymentStatus << ", Unclaimed" << "\n";
     }
 
     fileBooking.close();
-    cout << "\nYour booking ID is: " << booking_id <<"\nPlease remember it.\n";
+    cout << "\nYour booking ID is: " << booking_id << "\nPlease remember it.\n";
 }
 
 void Booking(string username)
@@ -100,15 +100,19 @@ void Booking(string username)
     char confirm;
     // handles user choice
     char choice;
+    int payment;
     //Price calculation
     double gross;
     double total;
     const double tax = 1.15;
     const double serviceFee = 10;
     const double costKM = 5;
+    string paymentStatus;
     //User details
     int passengerCount;
-    string specialNeed;
+    int passengerCountMax;
+    string specialNeeds;
+    char Luggage;
     //Destination struct
     struct {
         string name;
@@ -271,8 +275,81 @@ void Booking(string username)
             break;
         }
         Sleep(1000);
-        //
+        // destinationID
         destinationID = toupper(choice);
+        //gets user input and confirms is valid
+        cout << "\nPlease enter the corresponding letter to submit your Luggage type\nN = normal\nH = heavy and 1 less avalable passenger slot due to space \n: ";
+        while (true)
+        {
+            try
+            {
+                cin >> Luggage;
+                if (tolower(Luggage) != 'n' && tolower(Luggage) != 'h') {
+                    throw(Luggage);
+                }
+                else if (tolower(Luggage) == 'h') {
+                    passengerCountMax = 3;
+                    break;
+                }
+                else
+                {
+                    passengerCountMax = 4;
+                    break;
+                }
+            }
+            catch (char Luggage)
+            {
+                cout << "\n'" << Luggage << "' is not an option\n Please enter a valid option\nN = normal\nH = heavy and 1 less avalable passenger slot due to space \n:";
+            }
+        }
+        Sleep(1000);
+        //gets user input and confirms is valid
+        cout << "\nPlease enter the amount of passengers who wil be taking this trip (Max: " << passengerCountMax << ")\n:";
+        while (true)
+        {
+            try
+            {
+                cin >> passengerCount;
+                if (passengerCount <= 0 || passengerCount > passengerCountMax) {
+                    throw(passengerCount);
+                }
+                else {
+                    break;
+                }
+            }
+            catch (int passengerCount)
+            {
+                cout << "\n'" << passengerCount << "' is not a valid number\nPlease enter a valid Passenger count\n:";
+            }
+        }
+        Sleep(1000);
+        //gets user input and confirms is valid
+        cout << "\nDoes this trip have any special needs passengers(infant, physically challenging person who needs support)?\nY = yes /N = no:";
+        while (true) {
+            try {
+                cin >> confirm;
+                if (tolower(confirm) != 'y' && tolower(confirm) != 'n')
+                {
+                    throw(confirm);
+                }
+                else if (tolower(confirm) == 'y')
+                {
+                    cout << "Then please sum up what our drivers should be aware of when picking " << name << " up.\n(please be aware our drivers are only expected to be polite, helpful within reason, and deliver " << name << " safely to their location)\n'enter' key submits information\n: ";
+                    cin >> specialNeeds;
+                    break;
+                }
+                else
+                {
+                    specialNeeds = "None";
+                    break;
+                }
+            }
+            catch (char confirm)
+            {
+                cout << "\nInvalid input!\nPlease only enter 'y' for yes and 'n' for no.\n";
+            }
+        }
+        Sleep(1000);
         // calculates total and gross
         gross = serviceFee + (destinationkm * costKM);
         total = gross * tax;
@@ -284,6 +361,16 @@ void Booking(string username)
                     cout << "\nTrip: " << name << " will be traveling from Yoobee University to " << destinationName << " which is " << destinationkm << " km away.";
                     cout << "\nGross cost(total cost without tax): $" << serviceFee << " Service Fee + (" << destinationkm << "km x $" << costKM << ") = $" << gross;
                     cout << ".\nTotal cost(with tax): $" << gross << " + " << tax * 100 - 100 << "% = $" << setprecision(3) << total << ".\n";
+                    cout << "Total Passenger Count: " << passengerCount << ".\nLuggage type:";
+                    if (tolower(Luggage) == 'h')
+                    {
+                        cout << " Heavy.\n";
+                    }
+                    else
+                    {
+                        cout << " Normal.\n";
+                    }
+                    cout << "Special Needs: '" << specialNeeds << "'.\n";
                     Sleep(5000);
                     cout << "\nDo wish to book a taxi with the above information " << username << "?\n(y/n): ";
                 }
@@ -292,6 +379,16 @@ void Booking(string username)
                     cout << "\nTrip: " << name << " will be traveling from Yoobee University to " << destinationName << " which is " << destinationkm << " km away.";
                     cout << "\nGross cost(total cost without tax): $" << serviceFee << " Service Fee + (" << destinationkm << "km x $" << costKM << ") = $" << gross;
                     cout << ".\nTotal cost(with tax): $" << gross << " + " << tax * 100 - 100 << "% = $" << setprecision(3) << total << ".\n";
+                    cout << "Total Passenger Count: " << passengerCount << ".\nLuggage type:";
+                    if (tolower(Luggage) == 'h')
+                    {
+                        cout << " Heavy.\n";
+                    }
+                    else
+                    {
+                        cout << " Normal.\n";
+                    }
+                    cout << "Special Needs: '" << specialNeeds << "'.\n";
                     Sleep(5000);
                     cout << "\nDo wish to book a taxi with the above information " << username << "?\n(y/n): ";
                 }
@@ -322,6 +419,30 @@ void Booking(string username)
                             else if (confirm == 'n')
                             {
                                 run = false;
+                                Sleep(1000);
+                                cout << "\nHow would you like to pay?\n1 for credit/Visa card. \n(this gets automatically charged to your credit card 12 hours after booking)\n2 for cash. \n(The driver will be expecting to be payed the day of the trip and will ne drive until payed. The driver is also allowed to leave hour after arrival if they have valid reason to suspect they will not be payed)\n:";
+                                while (true) {
+                                    try
+                                    {
+                                        cin >> payment;
+                                        if (payment != 1 && payment != 2) {
+                                            throw(payment);
+                                        }
+                                        else if (payment == 1)
+                                        {
+                                            paymentStatus = "Paid";
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            paymentStatus = "Pending";
+                                            break;
+                                        }
+                                    }
+                                    catch (int payment) {
+                                        cout << "\nInvalid input!\nPlease only enter '1' for credit/Visa card and '2' for cash\n";
+                                    }
+                                }
                                 break;
                             }
                             else
@@ -348,15 +469,15 @@ void Booking(string username)
     }
     //User's information actally gets booked and added to the booking file if they confirmed that the infromation they inputed was correct
     if (confirm == 'y') {
-        while(true){
+        while (true) {
             try {
 
             }
-            catch(char choice){
+            catch (char choice) {
 
             }
         }
-        bookTaxi(month, day, hour, minute, name, destinationName, destinationkm, destinationID, total);
-        cout << "\n\nYour taxi has been booked for the " << month << " Month, on the " << day << " Day, at " << hour << ":" << minute << " for " << name << ",\n Thank you for choosing Black and White cab Co";
+        bookTaxi(month, day, hour, minute, name, destinationName, destinationkm, destinationID, total, passengerCount, specialNeeds, Luggage, paymentStatus);
+        cout << "\n\nYour taxi has been booked for the " << month << " Month, on the " << day << " Day, at " << hour << ":" << minute << " for " << name << " making a total of " << passengerCount << " Passengers.\n Thank you for choosing Black and White cab Co";
     }
 }
