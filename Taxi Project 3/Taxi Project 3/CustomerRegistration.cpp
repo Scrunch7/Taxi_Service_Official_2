@@ -10,6 +10,7 @@ void custReg(string customerFile)
 }
 
 void openClose(string customerFile) {
+
 	//Creates a new variable file of type output file system (ofstream)
 	fstream myFile;
 
@@ -24,22 +25,34 @@ void openClose(string customerFile) {
 	std::cout << "\nFile created and opened successfully\n\n";
 
 	Customer test;
-	cout << "Enter your full name: ";
-	cin.ignore(); getline(cin, test.fullName);
+	cout << "Enter your first name: ";
+	cin >> test.firstName;
+	cout << "Enter your first name: ";
+	cin >> test.lastName;
 	cout << "Enter your Contact Number: ";
 	cin >> test.contactNumber;
 	cout << "Enter your Email: ";
 	cin >> test.email;
 	cout << "Enter your Street Address: ";
 	cin >> test.streetAddress;
+	cout << "Create your Username: ";
+	cin >> test.username;
+	cout << "Create your Password: ";
+	cin >> test.password;
 
 
-	myFile << test.fullName << ","
+	myFile << test.firstName << ","
+		<< test.lastName << ","
 		<< test.contactNumber << ","
 		<< test.email << ","
-		<< test.streetAddress << std::endl;
+		<< test.streetAddress << ","
+		<< test.username << ","
+		<< test.password << std::endl;
 
 	//Close the file assigned to myFile
 	myFile.close();
 
+	
+
 }
+
