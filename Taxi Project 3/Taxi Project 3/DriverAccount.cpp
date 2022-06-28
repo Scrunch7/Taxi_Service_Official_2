@@ -1,5 +1,32 @@
 #include "Functions.h"
 
+#include <vector>
+#include <sstream>
+
+#include <typeinfo>
+
+using std::vector;
+
+vector<vector<string>> driverAvailability(vector<vector<string>> content, string id)
+{
+	for (int i = 0; i < content.size(); i++) {
+		for (int j = 0; j < content[i].size(); j++) {
+			cout << "\n\n\n" << typeid(id).name() << "\n" << typeid(content[i][2]).name() << "\n\n\n";
+			if (content[i][2] == id) {
+				cout << "hit";
+				for (int k = 0; k < content[i].size(); k++) {
+					int newVal;
+					cin >> newVal;
+					content[i][k] = newVal;
+				}
+			}
+		}
+	}
+	return content;
+}//vector
+
+void changeDriverstatus(string fileName, string id);
+
 void driverAccount(string driverID)
 {
 	// initializing Varables 
@@ -56,7 +83,7 @@ void driverAccount(string driverID)
 				targetedReadCSV("bookings", target);
 				break;
 			case 4:
-				//take a taxi Job !must be replaced!
+				
 				break;
 			case 5:
 				//Driver payment details !must be replaced!
@@ -76,3 +103,10 @@ void driverAccount(string driverID)
 		}
 	}
 }
+
+void changeDriverstatus(string fileName, string id) {
+}
+
+
+
+
