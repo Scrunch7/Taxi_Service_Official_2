@@ -42,109 +42,68 @@ void login(char accountType)
 			}
 			runLogged = false;
 			break;
+
+			//driver
 		case 'd': {
-
-
-			//supposed to get total amount of drivers !must be replaced!
-			int driverCount = 10;
-			// string That Reads A File Or Struct That Holds All Driver Information And Gets The IDList !must be replaced!
-			string driverIDlist[10] = { "dr1", "dr2", "dr3", "dr4", "dr5" , "dr6" , "dr7" , "dr8" , "dr9" , "dr10" };
-			//place holder for aformentioned File Or Struct but storing passwords!must be replaced!
-			string driverpasswordList[10] = { "p1", "p2", "p3", "p4", "p5" , "p6" , "p7" , "p8" , "p9" , "p10" };
 			int dCounter = 0;
-			try
-			{
-				cout << "\nPlease enter your Driver ID: ";
-				cin >> driverID;
-				while (dCounter <= driverCount && search == true)
-				{
-					if (driverID == driverIDlist[dCounter])
-					{
-						search = false;
-						throw(driverID);
-					}
-					dCounter++;
-				}
-				if (dCounter > driverCount)
-				{
-					cout << "\nNo such ID exists.\n";
-				}
-				else
-				{
-					//string userpassword [uCounter];
-					string password = driverpasswordList[dCounter];
-					cout << "\nPlease Enter your password " << userName << ": ";
-					cin >> pasInput;
-					for (int i = 0; i < 3; i++)
-					{
-						if (pasInput == password)
-						{
-							driverAccount(driverID);
-							i = 3;
-						}
-						else
-						{
-							cout << "\nIncorrect password.\n" << 3 - i << " Tries left \nPlease Enter correct password: ";
-							cin >> pasInput;
-						}
-					}
-				}
+			bool result;
+
+			try {
+				while (ucounter < 3)
 			}
-			catch (string userName)
-			{
-				cout << "\nNo such ID exists.\n";
-				runLogged = false;
-				break;
-			}
-			runLogged = false;
-			break;
+
 		}
+
+		//customer
 		case 'u': {
-			//supposed to get total amount of users!must be replaced!
-			int userCount = 10;
-			// string That Reads A File Or Struct That Holds All Driver Information And Gets The IDList !must be replaced!
-			string userNamesList[10] = { "u1", "u2", "u3", "u4", "u5" , "u6" , "u7" , "u8" , "u9" , "u10" };
-			//place holder for aformentioned File Or Struct but storing passwords!must be replaced!
-			string userpasswordList[10] = { "p1", "p2", "p3", "p4", "p5" , "p6" , "p7" , "p8" , "p9" , "p10" };
+
 			int uCounter = 0;
+
+			bool result;
+
 			try
 			{
-				cout << "\nPlease enter you username: ";
-				cin >> userName;
-				while (uCounter <= userCount && search == true)
-				{
-					if (userName == userNamesList[uCounter])
-					{
-						search = false;
-					}
-					uCounter++;
-				}
-				if (uCounter > userCount)
-				{
-					throw(userName);
-				}
-				else
-				{
 
-					//string userpassword [uCounter];
-					string password = userpasswordList[uCounter];
+				//while loop checking username input
+				while (uCounter < 3) {
+					cout << "\nPlease enter you username: ";
+					cin >> userName;
+
+					result = checkUsername(userName);
+
+					if (!result) {
+						cout << "user not found";
+					}
+					if (result) break;
+
+					uCounter++;
+
+					if (uCounter >= 3) {
+						uCounter = 0;
+						landing();
+					}
+				}
+
+				//checking password input
+				uCounter = 0;
+				while (uCounter < 3) {
 					cout << "\nPlease Enter your password " << userName << ": ";
 					cin >> pasInput;
-					for (int i = 0; i < 3; i++)
-					{
-						if (pasInput == password)
-						{
-							userAccount(userName);
-							i = 3;
-						}
-						else
-						{
-							cout << "\nIncorrect password.\n" << 3 - i << " Tries left \nPlease Enter correct password: ";
-							cin >> pasInput;
-						}
+
+					result = checkPassword(pasInput);
+
+					if (!result) {
+						cout << "password not found";
+					}
+					if (result) break;
+
+					uCounter++;
+
+					if (uCounter >= 3) {
+						uCounter = 0;
+						landing();
 					}
 				}
-
 			}
 			catch (string userName)
 			{
@@ -165,4 +124,75 @@ void login(char accountType)
 			break;
 		}
 	}
+	//For observation perpouses, remove  once code is ready
+	while (true)
+	{
+		cout << "\nwait\n";
+		int wait;
+		cin >> wait;
+	}
+}
+
+//functions
+bool checkUsername(string input)
+{
+	bool result;
+	string type = "username";
+	result = checkinput(type, input);
+	return result;
+}
+
+bool checkPassword(string input)
+{
+	bool result;
+	string type = "password";
+	result = checkinput(type, input);
+	return result;
+}
+
+bool checkinput(string type, string input) {
+
+	string firstName;
+	string lastName;
+	string contactNum;
+	string address;
+	string email;
+	string username;
+	string password;
+	bool userFound = false;
+
+
+
+	std::fstream file("customerFile.csv", ios::in);
+
+	if (file.is_open()) {
+
+		while (file.good() && !userFound) {
+			getline(file, firstName, ',');
+			getline(file, lastName, ',');
+			getline(file, contactNum, ',');
+			getline(file, address, ',');
+			getline(file, email, ',');
+			getline(file, username, ',');
+			getline(file, password, '\n');
+			if (type == "username") {
+				if (input == username) {
+					userFound = true;
+
+				}
+			}
+			if (type == "password") {
+				if (input == password) {
+					userFound = true;
+
+				}
+			}
+
+		}
+	}
+	else {
+		cout << "failed to open file\n";
+	}
+
+	return userFound;
 }
