@@ -14,6 +14,10 @@ bool adminUsernameValid = false, adminPasswordValid = false;
 bool breakLoop = false;
 int landingInput; 	string test = "Testing testing";
 
+
+string usernameInput;
+string passwordInput;
+
 void landing() { //user gives input, validates login and password OR allows user to register which writes relevent info to file for future validation
 	Driver driver;
 
@@ -29,6 +33,7 @@ void landing() { //user gives input, validates login and password OR allows user
 		{
 		case 1: //customer Login
 			login('u');
+			return;
 			break;
 
 		case 2: //customer Sign Up
