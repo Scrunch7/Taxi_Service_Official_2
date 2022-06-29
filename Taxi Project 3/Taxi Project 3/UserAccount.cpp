@@ -5,6 +5,7 @@ void userAccount(string userName)
 	// initializing Varables 
 	bool runAccount = true;
 	int menuOption = 1;
+	int target = 10;
 	char input;
 	string name;
 
@@ -62,7 +63,8 @@ void userAccount(string userName)
 				runAccount = false;
 				break;
 			case 10:
-				bookingCancel( fileName, target);
+				
+				bookingCancel("bookings.csv", target);
 					break;
 			default:
 				throw(menuOption);
