@@ -90,13 +90,17 @@ void directWriteCSV(string fileName);
 void readCSV(string fileName);
 void writeCSV(string fileName);
 void targetedReadCSV(string fileName, int target);
+
 //Accounts
 void adminAccount();
 void driverAccount(string driverID);
 void userAccount(string userName);
+
 //Pages
 void Booking(string username);
+void cancelBooking();
 void login(char accountType);
+
 //unsorted
 void DrawLine(int stars);
 void landing();
