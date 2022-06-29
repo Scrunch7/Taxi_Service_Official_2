@@ -46,7 +46,8 @@ void bookTaxi(int month, int day, int hour, int minute, string name, string dest
     cout << "\nYour booking ID is: " << booking_id << "\nPlease remember it.\n";
 }
 
-void bookingCancel() {
+void cancelBooking() {
+    fstream fileIn, fileOut;
 
     // Open the existing file
     fileIn.open("bookings.csv", ios::in);
