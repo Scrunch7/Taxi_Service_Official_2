@@ -5,7 +5,8 @@ int permissions;
 void customerLogin(); //needs to be edited to read from files and compare
 void driverLogin();
 void adminLogin();
-//void readToS();
+void readToS();
+
 
 string userUsername, userPassword, operatorUsername, operatorPassword, adminUsername, adminPassword;
 bool userUsernameValid = false, userPasswordValid = false;
@@ -20,6 +21,9 @@ string passwordInput;
 
 void landing() { //user gives input, validates login and password OR allows user to register which writes relevent info to file for future validation
 	Driver driver;
+	DrawLine(11); cout << endl;
+	readTXT("TermsOfService");
+	DrawLine(11); cout << endl;
 	bool runPro = true;
 	DrawLine(11); cout << endl;
 	cout << "Main Menu *\n";
