@@ -1,2 +1,6 @@
 's Account has been created
 
+
+'s has cancelled Booking 1
+
+'s has cancelled Booking 0

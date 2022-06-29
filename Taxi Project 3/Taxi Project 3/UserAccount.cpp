@@ -33,7 +33,7 @@ void userAccount(string userName)
 	cout << "\nWelcome " << userName << ".\n";
 	while (runAccount == true) {
 		//Read complaint_problems userProbCount
-		cout << "\nInput 1 to Book a Taxi|Input 2 to Review TOS|Input 3 to View Your rights|Input 4 to Make a Review|Input 5 to Report a Problem|Input 6 to Re-read Pricing Calculation|Input 7 to Re-read Available Areas|Input 8 to Access Lost & Found|Input 9 to go Back to menu|Input 10 to Cancel a Booking\n:";
+		cout << "\nInput 1 to Book a Taxi|Input 2 to Review TOS|Input 3 to View Your rights|Input 4 to Make a Review|Input 5 to Report a Problem\nInput 6 to Re-read Pricing Calculation|Input 7 to Re-read Available Areas|Input 8 to Access Lost & Found|Input 9 to go Back to menu|Input 10 to Cancel a Booking\n:";
 		cin >> menuOption;
 		try
 		{
@@ -76,11 +76,12 @@ void userAccount(string userName)
 				break;
 			case 10:
 				cout << "\n";
-				readCSV("bookings.csv");
+				readCSV("bookings");
 				cout << "\nWhich booking would you like to delete " << userName << "?\n:";
 				cin >> target;
 				bookingCancel("bookings.csv", target);
 				logCancellation("registration_report", userName, target);
+				readCSV("bookings");
 				break;
 			default:
 				throw(menuOption);
