@@ -7,6 +7,18 @@
 
 using std::vector;
 
+
+string firstName, lastName, gender, DoB, DoB_Day, DoB_Month, DoB_Year, nationality, licenceNumber, expiryDate, yearsDriving, contactNumber, email;
+string address, bankAccountNumber, bankName, vehicleRegoNum, vehicleMake, vehicleModel, wofExpiryDate, endorsmentNumber, endorsmentExpiry, driverUsername, driverPassword, availablity;
+
+string driverUsername1;
+
+int index, new_availablity, count = 0, i;
+string line, word;
+vector<string> row;
+
+int inputOptions;
+
 vector<vector<string>> driverAvailability(vector<vector<string>> content, string id)
 {
 	for (int i = 0; i < content.size(); i++) {
@@ -85,7 +97,7 @@ void driverAccount(string driverID)
 				targetedReadCSV("bookings", target);
 				break;
 			case 4:
-				
+				changeDriverstatus("driverFile.csv", driverUsername);
 				break;
 			case 5:
 				//Driver payment details !must be replaced!
@@ -94,6 +106,7 @@ void driverAccount(string driverID)
 			case 6:
 				runAccount = false;
 				break;
+
 			default:
 				throw(menuOption);
 				break;
@@ -107,6 +120,115 @@ void driverAccount(string driverID)
 }
 
 void changeDriverstatus(string fileName, string id) {
+
+		// File pointer
+		fstream fileIn, fileOut;
+
+		// Open an existing record
+		fileIn.open("driverFile.csv", ios::in);
+
+		// Create a new file to store updated data
+		fileOut.open("driverFileNew.csv", ios::out);
+
+		
+
+
+		Driver test;
+		// Get the roll number from the user
+		cout << "you are currently " << test.availablity;
+		cout << "Enter your username in order to change availablity: ";
+		cin >> driverUsername;
+
+		// Get the data to be updated
+		cout << "Change driver status to: \n1. Available\n2. Unavailable\n";
+		cin >> inputOptions;
+
+		// Determine the index
+			index = 14;
+		
+
+		// Get the new marks
+		//cout << "Enter new availablity: ";
+		//cin >> new_availablity;
+
+		switch (inputOptions) {
+
+		case 1:
+			availablity = "available";
+			break;
+		case 2:
+			availablity = "unavailable";
+			break;
+
+		default:
+			break;
+		}
+
+		// Traverse the file
+		while (!fileIn.eof()) {
+
+			row.clear();
+
+			getline(fileIn, line);
+			stringstream s(line);
+
+			while (getline(s, word, ',')) {
+				row.push_back(word);
+			}
+
+			//driverUsername = (row[0]);//*
+			int row_size = row.size();
+
+			if (driverUsername1 == driverUsername) {
+				count = 1;
+				stringstream convert;
+
+				// sending a number as a stream into output string
+				convert << availablity;
+
+				// the str() converts number into string
+				row[index] = convert.str();
+
+				if (!fileIn.eof()) {
+					for (i = 0; i < row_size - 1; i++) {
+
+						// write the updated data
+						// into a new file 'reportcardnew.csv'
+						// using fout
+						fileOut << row[i] << ", ";
+					}
+
+					fileOut << row[row_size - 1] << "\n";
+				}
+			}
+			else {
+				if (!fileIn.eof()) {
+					for (i = 0; i < row_size - 1; i++) {
+
+						// writing other existing records
+						// into the new file using fileOut.
+						fileOut << row[i] << ", ";
+					}
+
+					// the last column data ends with a '\n'
+					fileOut << row[row_size - 1] << "\n";
+				}
+			}
+			if (fileIn.eof())
+				break;
+		}
+		if (count == 0)
+			cout << "Record not found\n";
+
+		fileIn.close();
+		fileOut.close();
+
+		// removing the existing file
+		remove("driverFile.csv");
+
+		// renaming the updated file with the existing file name
+		rename("driverFileNew.csv", "driverFile.csv");
+
 }
 
 

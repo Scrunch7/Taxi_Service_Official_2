@@ -64,6 +64,7 @@ void filloutDriverRego(string driverFile) {
 	cout << "\nEnter your Vehicle's Make: "; cin >> test.vehicleMake;
 	cout << "\nEnter you Vehicle's Model: "; cin >> test.vehicleModel;
 	cout << "\nEnter your WoF Expiry Date "; cin >> test.wofExpiryDate;
+	cout << "\nEnter your avalability "; cin >> test.availablity;
 
 	srand((time(NULL)));
 	for (int i = 100000; i < 999999; i++) {
@@ -107,7 +108,8 @@ void filloutDriverRego(string driverFile) {
 		<< test.vehicleModel << ","
 		<< test.wofExpiryDate << ","
 		<< test.endorsmentNumber << ","
-		<< test.endorsmentExpiry << endl;
+		<< test.endorsmentExpiry << ","
+		<< test.availablity << endl;
 
 	myFile.close();
 
