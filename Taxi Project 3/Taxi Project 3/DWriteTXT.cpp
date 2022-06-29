@@ -16,6 +16,7 @@ void dWriteTXT(string fileName)
 	cout << "\n" << fileName << " opened:\n\n";
 
 	cout << "(Press 'Enter' to submit your text):\n";
+	cin >> userText;
 	getline(cin, userText);
 	myFile << userText << endl << endl;
 

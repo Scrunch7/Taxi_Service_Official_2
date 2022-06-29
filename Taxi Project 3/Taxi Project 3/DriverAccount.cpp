@@ -80,7 +80,7 @@ void driverAccount(string driverID)
 					try 
 					{
 						cin >> target;
-						if (target > 1) {
+						if (target > 0) {
 							break;
 						}
 						else 
@@ -105,7 +105,7 @@ void driverAccount(string driverID)
 				break;
 			case 6:
 				runAccount = false;
-				break;
+				landing();
 
 			default:
 				throw(menuOption);

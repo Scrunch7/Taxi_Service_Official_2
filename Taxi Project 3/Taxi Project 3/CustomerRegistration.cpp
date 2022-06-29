@@ -46,7 +46,7 @@ void openClose(string customerFile) {
 	Customer test;
 	cout << "Enter your first name: ";
 	cin >> test.firstName;
-	cout << "Enter your first name: ";
+	cout << "Enter your last name: ";
 	cin >> test.lastName;
 	cout << "Enter your Contact Number: ";
 	cin >> test.contactNumber;

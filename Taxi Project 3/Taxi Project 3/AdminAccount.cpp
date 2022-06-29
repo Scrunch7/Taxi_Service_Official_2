@@ -75,7 +75,7 @@ void adminAccount()
 				break;
 			case 9:
 				runAccount = false;
-				break;
+				landing();
 			default:
 				throw(menuOption);
 				break;
