@@ -20,7 +20,7 @@ string passwordInput;
 
 void landing() { //user gives input, validates login and password OR allows user to register which writes relevent info to file for future validation
 	Driver driver;
-
+	bool runPro = true;
 	DrawLine(11); cout << endl;
 	cout << "Main Menu *\n";
 	DrawLine(11); cout << endl;
@@ -28,7 +28,7 @@ void landing() { //user gives input, validates login and password OR allows user
 	cout << "1. Customer Login\n" << "2. Customer Sign Up\n" << "3. Driver Login\n" << "4. Driver Registration\n" << "5. Admin Options\n" <<"6. Read Terms of Service\n" << "7. Exit\n";
 	cout << "Choose: "; cin >> landingInput;
 
-	while (!breakLoop) {
+	while (runPro == true) {
 		switch (landingInput)
 		{
 		case 1: //customer Login
@@ -62,7 +62,7 @@ void landing() { //user gives input, validates login and password OR allows user
 			break;
 
 		case 7: //exit
-			breakLoop = true;
+			runPro = false;
 			break;
 		default:
 			cout << "Invalid Option, please enter 1-6\n\n\n";
