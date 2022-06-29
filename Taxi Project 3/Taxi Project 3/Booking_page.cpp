@@ -56,8 +56,8 @@ void cancelBooking() {
     // Create a new file to store the non-deleted data
     fileOut.open("bookingsNew.csv", ios::out);
 
-    int month, int day, hour, minute;
-    string name, destinationName;
+    int month, day, hour, minute, i, count = 0;
+    string name, name1, destinationName;
     double destinationkm;
     char destinationID;
     double total;
@@ -83,18 +83,18 @@ void cancelBooking() {
         getline(fileIn, line);
         stringstream s(line);
 
-        while (getline(s, word, ', ')) {
+        while (getline(s, word, ',')) {
             row.push_back(word);
         }
 
         int row_size = row.size();
-        roll1 = stoi(row[0]);
+        name1 = stoi(row[0]);
 
         // writing all records,
         // except the record to be deleted,
         // into the new file 'reportcardnew.csv'
         // using fileOut pointer
-        if (roll1 != rollnum) {
+        if (name1 != name) {
             if (!fileIn.eof()) {
                 for (i = 0; i < row_size - 1; i++) {
                     fileOut << row[i] << ", ";
