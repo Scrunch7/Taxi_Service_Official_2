@@ -98,7 +98,7 @@ void userAccount(string userName);
 
 //Pages
 void Booking(string username);
-void cancelBooking();
+void bookingCancel(string fileName, int target);
 void login(char accountType);
 
 //unsorted
@@ -121,5 +121,3 @@ bool userCheckUsername(string input);
 bool driverCheckInput(string type, string input);
 bool driverCheckUsername(string input);
 bool driverCheckPassword(string input);
-
-void readToS();

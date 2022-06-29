@@ -62,7 +62,7 @@ void userAccount(string userName)
 				runAccount = false;
 				break;
 			case 10:
-				cancelBooking();
+				bookingCancel( fileName, target);
 					break;
 			default:
 				throw(menuOption);
@@ -76,24 +76,22 @@ void userAccount(string userName)
 	}
 }
 
-void cancelBooking(string fileName) {
-	ifstream myFileCSV;
-	string myLineCSV;
+void bookingCancel(string fileName, int target)
+{
+	ifstream file;
+	file.open("bookings.csv");
+	string line;
+	int counter = 0;//counter
 
-	myFileCSV.open("bookings.csv");
 
+	while (getline(file, line)) {
+		counter++;
+		if (counter == target) {
+			cout << line << endl;
+			break;
+		}
 
-	if (!myFileCSV.is_open()) {
-		cout << "\nWARNING: File failed to open\n";
-		return;
 	}
-
-	while (getline(myFileCSV, myLineCSV)) {
-		cout << myLineCSV << endl;
-	}
-
-	myFileCSV.close();
-
 }
 
 
