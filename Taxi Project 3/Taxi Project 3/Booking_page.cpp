@@ -16,9 +16,6 @@ int readForID() {
             id++;
         }
     }
-    else {
-        cout << "\nNo File Found\n";
-    }
     return id + 1;
 }
 
@@ -110,7 +107,7 @@ void Booking(string username)
         {
             //explains to user how date is formated
 
-            cout << "\n\nAll dates are stored in number date format\nMonth, Days, Hours, and Minutes (eg Mon/d/h/m)";
+            cout << "\n\nAll dates are stored in number date format\nMonth, Days, Hours, and Minutes (eg Mon/d/h/m)\n";
             Sleep(3000);
             cout << "\nWe only go from Yoobee to:\nVictoria university kelburn campus, (V)\nBasin Reserve, (B)\nAirport, (A)\nIsland bay, (I)\nOriental bay Boat Cafe, (O)\n";
             Sleep(1000);
@@ -198,7 +195,7 @@ void Booking(string username)
             Sleep(1000);
             cout << "\nWe only go from Yoobee to:\nVictoria university kelburn campus, (V)\nBasin Reserve, (B)\nAirport, (A)\nIsland bay, (I)\nOriental bay Boat Cafe, (O)\n";
             cout << "\nPlease also be aware that we are not liable for any consequences caused by incorrect information being submited as per Terms & Services.";
-            Sleep(5000);
+            Sleep(3000);
             //gets user input and confirms is valid
             cout << "\nPlease enter the corresponding letter to submit your destination\n: ";
             while (true) {
@@ -300,13 +297,14 @@ void Booking(string username)
                     }
                     else if (tolower(confirm) == 'y')
                     {
-                        cout << "Then please sum up what our drivers should be aware of when picking " << name << " up.\n(please be aware our drivers are only expected to be polite, helpful within reason, and deliver " << name << " safely to their location)\n'enter' key submits information\n: ";
-                        cin >> specialNeeds;
+                        cout << "\n(Then please be aware our drivers are only expected to be polite, helpful within reason, and deliver " << name << " safely to their location)\n";
+                        Sleep(1000);
+                        specialNeeds = "Yes";
                         break;
                     }
                     else
                     {
-                        specialNeeds = "None";
+                        specialNeeds = "No";
                         break;
                     }
                 }
@@ -366,6 +364,29 @@ void Booking(string username)
                     }
                     else if (confirm == 'y')
                     {
+                        cout << "\nHow would you like to pay?\n1 for credit/Visa card. \n(this gets automatically charged to your credit card 12 hours after booking)\n2 for cash. \n(The driver will be expecting to be payed the day of the trip and will ne drive until payed. \nThe driver is also allowed to leave hour after arrival if they have valid reason to suspect they will not be payed)\n:";
+                        while (true) {
+                            try
+                            {
+                                cin >> payment;
+                                if (payment != 1 && payment != 2) {
+                                    throw(payment);
+                                }
+                                else if (payment == 1)
+                                {
+                                    paymentStatus = "Paid";
+                                    break;
+                                }
+                                else
+                                {
+                                    paymentStatus = "Pending";
+                                    break;
+                                }
+                            }
+                            catch (int payment) {
+                                cout << "\nInvalid input!\nPlease only enter '1' for credit/Visa card and '2' for cash\n";
+                            }
+                        }
                         run = false;
                         break;
                     }
@@ -378,45 +399,18 @@ void Booking(string username)
                                 cout << "\nWould you like to Book with diffrent information?\n(y/n): ";
                                 cin >> confirm;
                                 //gets user input and confirms is valid
-                                confirm = tolower(confirm);
-                                if (confirm != 'y' && confirm != 'n') {
+                                if (tolower(confirm) != 'y' && tolower(confirm) != 'n') {
                                     throw(confirm);
                                 }
                                 else if (confirm == 'n')
                                 {
                                     run = false;
-                                    Sleep(1000);
-                                    cout << "\nHow would you like to pay?\n1 for credit/Visa card. \n(this gets automatically charged to your credit card 12 hours after booking)\n2 for cash. \n(The driver will be expecting to be payed the day of the trip and will ne drive until payed. The driver is also allowed to leave hour after arrival if they have valid reason to suspect they will not be payed)\n:";
-                                    while (true) {
-                                        try
-                                        {
-                                            cin >> payment;
-                                            if (payment != 1 && payment != 2) {
-                                                throw(payment);
-                                            }
-                                            else if (payment == 1)
-                                            {
-                                                paymentStatus = "Paid";
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                paymentStatus = "Pending";
-                                                break;
-                                            }
-                                        }
-                                        catch (int payment) {
-                                            cout << "\nInvalid input!\nPlease only enter '1' for credit/Visa card and '2' for cash\n";
-                                        }
-                                    }
-                                    break;
+                                    userAccount(username);
                                 }
                                 else
                                 {
-
                                     break;
                                 }
-                                break;
                             }
                             catch (char confirm) {
                                 cout << "\nInvalid input!\nPlease only enter 'y' for yes and 'n' for no.\n";
@@ -434,17 +428,16 @@ void Booking(string username)
 
         }
         //User's information actally gets booked and added to the booking file if they confirmed that the infromation they inputed was correct
-        if (confirm == 'y') {
-            while (true) {
-                try {
-
-                }
-                catch (char choice) {
-
-                }
-            }
+        if (confirm == 'y') 
+        {
             bookTaxi(month, day, hour, minute, name, destinationName, destinationkm, destinationID, total, passengerCount, specialNeeds, Luggage, paymentStatus);
-            cout << "\n\nYour taxi has been booked for the " << month << " Month, on the " << day << " Day, at " << hour << ":" << minute << " for " << name << " making a total of " << passengerCount << " Passengers.\n Thank you for choosing Black and White cab Co";
+            if (minute < 10) {
+                cout << "\n\nYour taxi has been booked for the " << month << " Month, on the " << day << " Day, at " << hour << ":0" << minute << " for " << name << " making a total of " << passengerCount << " Passengers.\n Thank you for choosing Black and White cab Co";
+            }
+            else {
+                cout << "\n\nYour taxi has been booked for the " << month << " Month, on the " << day << " Day, at " << hour << ":" << minute << " for " << name << " making a total of " << passengerCount << " Passengers.\n Thank you for choosing Black and White cab Co";
+            }
+            userAccount(username);
         }
 
     }

@@ -2,10 +2,18 @@
 C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(39,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
 C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(50,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
 C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(80,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
-C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(214,29): warning C4101: 'choice': unreferenced local variable
-C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(313,29): warning C4101: 'confirm': unreferenced local variable
-C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(408,52): warning C4101: 'payment': unreferenced local variable
-C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(421,41): warning C4101: 'confirm': unreferenced local variable
-C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(428,29): warning C4101: 'confirm': unreferenced local variable
-C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(442,29): warning C4101: 'choice': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(211,29): warning C4101: 'choice': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(311,29): warning C4101: 'confirm': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(386,40): warning C4101: 'payment': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(415,41): warning C4101: 'confirm': unreferenced local variable
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Booking_page.cpp(422,29): warning C4101: 'confirm': unreferenced local variable
+  ReadCSV.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(39,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(50,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(80,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  ReadTXT.cpp
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(39,2): warning C4091: 'extern ': ignored on left of 'paymentMethod' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(50,2): warning C4091: 'extern ': ignored on left of 'Customer' when no variable is declared
+C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\Taxi Project 3\Functions.h(80,2): warning C4091: 'extern ': ignored on left of 'Driver' when no variable is declared
+  Generating Code...
   Taxi Project 3.vcxproj -> C:\Users\ethan\Desktop\CS103_Taxi_Service\Taxi_Service_Official_2\Taxi Project 3\x64\Debug\Taxi Project 3.exe
