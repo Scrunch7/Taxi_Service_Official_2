@@ -21,16 +21,11 @@ void logRegistration(string fileName, string username)
 		cout << "\nWARNING: File failed to open\n";
 		return;
 	}
-	cout << "\n" << fileName << " opened:\n\n";
 
 	getline(cin, username);
-	myFile << username << "'s Account has been created" << endl << endl;
+	myFile << endl << username << "'s Account has been created" << endl;
 
 	myFile.close();
-	if (!myFile.is_open())
-	{
-		cout << "\n" << fileName << " closed.\n\n";
-	}
 }
 
 void openClose(string customerFile) {

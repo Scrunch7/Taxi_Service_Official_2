@@ -1,5 +1,26 @@
 #include "Functions.h"
 
+
+void logCancellation(string fileName, string username, int target)
+{
+	ofstream myFile;
+	string myLine;
+
+	myFile.open(fileName + ".txt", std::ios::app);
+
+	if (!myFile.is_open())
+	{
+		cout << "\nWARNING: File failed to open\n";
+		return;
+	}
+
+	getline(cin, username);
+	myFile << endl << username << "'s has cancelled Booking " << target << endl;
+
+	myFile.close();
+}
+
+
 void userAccount(string userName)
 {
 	// initializing Varables 
@@ -7,18 +28,9 @@ void userAccount(string userName)
 	int menuOption = 1;
 	int target = 10;
 	char input;
-	string name;
 
-	if (userName == "guest")
-	{
-		string name = "Guest";
-	}
-	else
-	{
-		string name = userName;
-	}
 
-	cout << "\nWelcome " << name << ".\n";
+	cout << "\nWelcome " << userName << ".\n";
 	while (runAccount == true) {
 		//Read complaint_problems userProbCount
 		cout << "\nInput 1 to Book a Taxi|Input 2 to Review TOS|Input 3 to View Your rights|Input 4 to Make a Review|Input 5 to Report a Problem|Input 6 to Re-read Pricing Calculation|Input 7 to Re-read Available Areas|Input 8 to Access Lost & Found|Input 9 to go Back to menu|Input 10 to Cancel a Booking\n:";
@@ -63,9 +75,13 @@ void userAccount(string userName)
 				runAccount = false;
 				break;
 			case 10:
-				
+				cout << "\n";
+				readCSV("bookings.csv");
+				cout << "\nWhich booking would you like to delete " << userName << "?\n:";
+				cin >> target;
 				bookingCancel("bookings.csv", target);
-					break;
+				logCancellation("registration_report", userName, target);
+				break;
 			default:
 				throw(menuOption);
 				break;
