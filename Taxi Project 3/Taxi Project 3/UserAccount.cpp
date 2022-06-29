@@ -98,6 +98,7 @@ void bookingCancel(string fileName, int target)
 {
 	ifstream file;
 	file.open("bookings.csv");
+	string deleteline;
 	string line;
 	int counter = 0;//counter
 
@@ -105,7 +106,7 @@ void bookingCancel(string fileName, int target)
 	while (getline(file, line)) {
 		counter++;
 		if (counter == target) {
-			cout << line << endl;
+			line.replace(line.find(deleteline), deleteline.length(), "");
 			break;
 		}
 
