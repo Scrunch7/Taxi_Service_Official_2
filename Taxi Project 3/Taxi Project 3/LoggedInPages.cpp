@@ -67,7 +67,7 @@ void login(char accountType)
 						result = driverCheckPassword(pasInput);
 
 						if (!result) {
-							cout << "\nPassword not found\n";
+							cout << "\nIncorrect Password\n" << 3 - counter << " Tries left\n:";
 							counter++;
 						}
 						else
@@ -119,7 +119,7 @@ void login(char accountType)
 						result = userCheckPassword(pasInput);
 
 						if (!result) {
-							cout << "password not found";
+							cout << "\nIncorrect Password\n" << 3 - counter << " Tries left\n:";
 							counter++;
 						}
 						else

@@ -31,7 +31,7 @@ void userAccount(string userName)
 				Booking(userName);
 				break;
 			case 2:
-				readTXT("TOS");
+				readTXT("TermsOfService");
 				break;
 			case 3:
 				readTXT("user_rights");
