@@ -57,7 +57,6 @@ void landing() { //user gives input, validates login and password OR allows user
 		case 6: //ToS
 		
 			cout << "Testing testing";
-			readTXT("TermsOfService");
 			landing();
 			break;
 
