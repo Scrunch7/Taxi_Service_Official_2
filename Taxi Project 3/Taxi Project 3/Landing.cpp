@@ -57,7 +57,7 @@ void landing() { //user gives input, validates login and password OR allows user
 		case 6: //ToS
 		
 			cout << "Testing testing";
-			readToS();
+			readTXT("TermsOfService");
 			landing();
 			break;
 
@@ -72,18 +72,18 @@ void landing() { //user gives input, validates login and password OR allows user
 	}
 }
 
-void readToS() {
-	ifstream myFile;
-	string myString;
-
-	myFile.open("TermsOfService.txt", ios::in);
-	
-		if (myFile.is_open()) { // always check whether the file is open
-			string ToS;
-			while (getline(myFile, ToS)) {
-				cout << ToS << "\n\n\n";
-			}
-		}
-	
-	myFile.close();
-}
+//void readToS() {
+//	ifstream myFile;
+//	string myString;
+//
+//	myFile.open("TermsOfService.txt", ios::in);
+//	
+//		if (myFile.is_open()) { // always check whether the file is open
+//			string ToS;
+//			while (getline(myFile, ToS)) {
+//				cout << ToS << "\n\n\n";
+//			}
+//		}
+//	
+//	myFile.close();
+//}

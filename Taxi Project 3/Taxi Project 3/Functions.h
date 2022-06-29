@@ -121,3 +121,5 @@ bool userCheckUsername(string input);
 bool driverCheckInput(string type, string input);
 bool driverCheckUsername(string input);
 bool driverCheckPassword(string input);
+
+void readToS();
