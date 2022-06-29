@@ -5,7 +5,8 @@ int permissions;
 void customerLogin(); //needs to be edited to read from files and compare
 void driverLogin();
 void adminLogin();
-//void readToS();
+void readToS();
+
 
 string userUsername, userPassword, operatorUsername, operatorPassword, adminUsername, adminPassword;
 bool userUsernameValid = false, userPasswordValid = false;
